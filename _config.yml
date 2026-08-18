@@ -1,0 +1,75 @@
+title: Alien Arboreal
+description: "Captive-bred crested geckos, biological observations, and the small systems that make them work. Based in Ottawa, Ontario."
+url: "https://[DOMAIN]"
+baseurl: ""
+author: Alien Arboreal
+email: "[BUSINESS_EMAIL]"
+instagram: "[INSTAGRAM_URL]"
+facebook: "[FACEBOOK_URL]"
+location: "Ottawa, Ontario, Canada"
+og_image: "assets/images/brand/og-default.jpg"
+
+collections:
+  geckos:
+    output: true
+    permalink: /geckos/:name/
+  observations:
+    output: true
+    permalink: /observations/:name/
+  pairings:
+    output: false
+  clutches:
+    output: false
+
+defaults:
+  - scope:
+      path: ""
+      type: "geckos"
+    values:
+      layout: "gecko"
+  - scope:
+      path: ""
+      type: "observations"
+    values:
+      layout: "observation"
+  - scope:
+      path: ""
+      type: "pairings"
+    values:
+      layout: "pairing"
+  - scope:
+      path: ""
+      type: "clutches"
+    values:
+      layout: "clutch"
+  - scope:
+      path: ""
+    values:
+      layout: "page"
+
+nav_links:
+  - title: Home
+    url: /
+  - title: Available Geckos
+    url: /available/
+  - title: Observations & Research
+    url: /observations/
+  - title: About
+    url: /about/
+  - title: Contact
+    url: /contact/
+
+plugins:
+  - jekyll-seo-tag
+  - jekyll-sitemap
+
+exclude:
+  - Gemfile
+  - Gemfile.lock
+  - node_modules
+  - vendor
+  - README.md
+  - _templates
+
+markdown: kramdown
+highlighter: rouge
