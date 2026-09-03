@@ -10,7 +10,7 @@ description: "Captive-bred crested geckos, biological observations, and the smal
     <p class="hero-subtitle">Captive-bred crested geckos, biological observations, and the small systems that make them work.</p>
     <div class="hero-actions">
       <a href="{{ '/available/' | relative_url }}" class="btn btn-primary">View Available Geckos</a>
-      <a href="{{ '/observations/' | relative_url }}" class="btn btn-secondary">Read Field Notes</a>
+      <a href="{{ '/observations/' | relative_url }}" class="btn btn-secondary">View Observation Log</a>
     </div>
   </div>
 </section>
@@ -65,7 +65,7 @@ description: "Captive-bred crested geckos, biological observations, and the smal
 <section class="home-section">
   <div class="container">
     <div class="section-header">
-      <h2>Observations &amp; Research</h2>
+      <h2>Observation Log</h2>
       <a href="{{ '/observations/' | relative_url }}">View all &rarr;</a>
     </div>
     {% assign recent_obs = site.observations | sort: "date" | reverse %}
