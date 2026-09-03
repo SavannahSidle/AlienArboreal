@@ -1,13 +1,13 @@
 ---
 layout: home
 title: null
-description: "Captive-bred crested geckos, biological observations, and the small systems that make them work."
+description: "Crested geckos and select species raised with careful husbandry, biological curiosity, and respect for life."
 ---
 
 <section class="hero">
   <div class="container">
     <h1 class="hero-title">Alien Arboreal</h1>
-    <p class="hero-subtitle">Captive-bred crested geckos, biological observations, and the small systems that make them work.</p>
+    <p class="hero-subtitle">Crested geckos and select species raised with careful husbandry, biological curiosity, and respect for life.</p>
     <div class="hero-actions">
       <a href="{{ '/available/' | relative_url }}" class="btn btn-primary">View Available Geckos</a>
       <a href="{{ '/observations/' | relative_url }}" class="btn btn-secondary">View Observation Log</a>
@@ -17,7 +17,7 @@ description: "Captive-bred crested geckos, biological observations, and the smal
 
 <section class="home-section">
   <div class="container">
-    <p>We breed crested geckos with an emphasis on record-keeping and careful observation over flash. Every animal has a documented lineage, weight history, and husbandry record. If husbandry is a practice, this is the logbook.</p>
+    <p>Life is astonishing. Every animal here is a living individual within a living system. Our work begins with that fact: care deeply, stay curious, and keep improving the world we build around them.</p>
     <p><a href="{{ '/about/' | relative_url }}">More about what we do and why &rarr;</a></p>
   </div>
 </section>
