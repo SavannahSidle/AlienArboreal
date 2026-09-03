@@ -2,7 +2,7 @@
 layout: page
 title: Available Geckos
 eyebrow: Current animals
-description: Every listing includes the animal's permanent ID, lineage, hatch date, growth record, and honest husbandry notes.
+description: Healthy, carefully raised animals placed with people prepared to care for them well.
 permalink: /available/
 ---
 {% assign available_geckos = site.geckos | where: "status", "available" %}
@@ -14,4 +14,4 @@ permalink: /available/
 
 ## Before you inquire
 
-Animals are matched carefully, not dispatched like socks. Please review our placement, deposit, shipping, and live-arrival terms before contacting us.
+Animals are matched carefully, not dispatched like socks. Each listing includes the information needed to understand the individual animal, its background, and its care. Please review our placement, deposit, shipping, and live-arrival terms before contacting us.
