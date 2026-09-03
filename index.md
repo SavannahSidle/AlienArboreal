@@ -9,16 +9,16 @@ description: "Captive-bred crested geckos, biological observations, and the smal
     <h1 class="hero-title">Alien Arboreal</h1>
     <p class="hero-subtitle">Captive-bred crested geckos, biological observations, and the small systems that make them work.</p>
     <div class="hero-actions">
-      <a href="/available/" class="btn btn-primary">View Available Geckos</a>
-      <a href="/observations/" class="btn btn-secondary">Observations &amp; Research</a>
+      <a href="{{ '/available/' | relative_url }}" class="btn btn-primary">View Available Geckos</a>
+      <a href="{{ '/observations/' | relative_url }}" class="btn btn-secondary">Read Field Notes</a>
     </div>
   </div>
 </section>
 
 <section class="home-section">
   <div class="container">
-    <p>We breed crested geckos with an emphasis on record-keeping and careful observation over flash. Every animal here has a documented lineage, a weight history, and a feeding protocol that actually gets followed. The interest isn't in producing morphs for market trends — it's in understanding what's happening biologically: growth rates, clutch intervals, incubation variables, behavioural patterns worth noting. If husbandry is a practice, this is the logbook.</p>
-    <p><a href="/about/">More about what we do and why &rarr;</a></p>
+    <p>We breed crested geckos with an emphasis on record-keeping and careful observation over flash. Every animal has a documented lineage, weight history, and husbandry record. If husbandry is a practice, this is the logbook.</p>
+    <p><a href="{{ '/about/' | relative_url }}">More about what we do and why &rarr;</a></p>
   </div>
 </section>
 
@@ -26,7 +26,7 @@ description: "Captive-bred crested geckos, biological observations, and the smal
   <div class="container">
     <div class="section-header">
       <h2>Currently Available</h2>
-      <a href="/available/">View all &rarr;</a>
+      <a href="{{ '/available/' | relative_url }}">View all &rarr;</a>
     </div>
     {% assign featured_geckos = site.geckos | where: "featured", true | where: "status", "available" %}
     {% if featured_geckos.size > 0 %}
@@ -55,7 +55,7 @@ description: "Captive-bred crested geckos, biological observations, and the smal
       <p>
         <a href="{{ site.instagram }}">Instagram</a> &middot;
         <a href="{{ site.facebook }}">Facebook</a> &middot;
-        <a href="/contact/">Contact</a>
+        <a href="{{ '/contact/' | relative_url }}">Contact</a>
       </p>
     </div>
     {% endif %}
@@ -66,7 +66,7 @@ description: "Captive-bred crested geckos, biological observations, and the smal
   <div class="container">
     <div class="section-header">
       <h2>Observations &amp; Research</h2>
-      <a href="/observations/">View all &rarr;</a>
+      <a href="{{ '/observations/' | relative_url }}">View all &rarr;</a>
     </div>
     {% assign recent_obs = site.observations | sort: "date" | reverse %}
     {% if recent_obs.size > 0 %}
