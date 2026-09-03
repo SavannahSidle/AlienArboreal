@@ -1,13 +1,12 @@
 title: Alien Arboreal
 description: "Captive-bred crested geckos, biological observations, and the small systems that make them work. Based in Ottawa, Ontario."
-url: "https://[DOMAIN]"
-baseurl: ""
+url: "https://savannahsidle.github.io"
+baseurl: "/AlienArboreal"
 author: Alien Arboreal
 email: "[BUSINESS_EMAIL]"
 instagram: "[INSTAGRAM_URL]"
 facebook: "[FACEBOOK_URL]"
 location: "Ottawa, Ontario, Canada"
-og_image: "assets/images/brand/og-default.jpg"
 
 collections:
   geckos:
@@ -52,7 +51,7 @@ nav_links:
     url: /
   - title: Available Geckos
     url: /available/
-  - title: Observations & Research
+  - title: Field Notes
     url: /observations/
   - title: About
     url: /about/
