@@ -2,20 +2,22 @@
 layout: page
 title: Breeding & Biology
 eyebrow: Reference library
-description: What we have learned through breeding records, biological observation, and day-to-day care.
+description: Care informed by biology, close observation, and genuine curiosity about living systems.
 permalink: /breeding-biology/
 ---
 
 ## Breeding
 
-Pairing decisions, reproductive histories, clutch intervals, fertility, and incubation outcomes. This section will turn individual records into patterns we can actually use.
+Pairing decisions begin with health, compatibility, genetics, and long-term responsibility for every animal produced. Here we explore reproduction, inheritance, development, incubation, and the choices behind each pairing.
 
 ## Biology
 
-Growth, development, behaviour, inheritance, and the biological questions that emerge when animals are observed closely over time.
+Growth, development, behaviour, inheritance, and the biological questions that emerge when animals are observed closely over time. Life is complex. That is the interesting part.
 
 ## Husbandry
 
-Our working care protocols: feeding, enclosure conditions, seasonal adjustments, monitoring, and the reasoning behind changes in practice.
+Husbandry changes with the animal and its stage of life. Juveniles live in appropriately sized bins with paper towel substrate so eating, waste, growth, and health can be monitored clearly. As they mature, they move into planted bioactive enclosures. Adults live fully bioactive.
+
+This section covers feeding, enclosure conditions, bioactive systems, seasonal adjustments, health monitoring, and the reasoning behind changes in practice.
 
 The content here is organized by subject. For dated events and raw observations, visit the [Observation Log]({{ '/observations/' | relative_url }}).
