@@ -51,8 +51,10 @@ nav_links:
     url: /
   - title: Available Geckos
     url: /available/
-  - title: Field Notes
+  - title: Observation Log
     url: /observations/
+  - title: Breeding & Biology
+    url: /breeding-biology/
   - title: About
     url: /about/
   - title: Contact
