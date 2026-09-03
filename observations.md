@@ -1,8 +1,8 @@
 ---
 layout: page
-title: Field Notes
-eyebrow: Observations & research
-description: Husbandry records, behavioural observations, breeding data, and questions worth following.
+title: Observation Log
+eyebrow: Dated records
+description: Behaviour, development, breeding events, and the small details worth tracking over time.
 permalink: /observations/
 ---
 {% assign notes = site.observations | sort: "date" | reverse %}
