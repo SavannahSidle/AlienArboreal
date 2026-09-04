@@ -8,7 +8,7 @@ permalink: /breeding-biology/
 
 ## Breeding
 
-Pairing decisions begin with health, compatibility, genetics, and long-term responsibility for every animal produced. Here we explore reproduction, inheritance, development, incubation, and the choices behind each pairing.
+Pairing decisions begin with health, compatibility, genetics, and responsibility for every new life that may begin. The animals create those lives; our role is to make careful choices and provide the conditions they need to thrive. Here we explore reproduction, inheritance, development, incubation, and the thinking behind each pairing.
 
 ## Biology
 
