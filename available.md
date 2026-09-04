@@ -14,4 +14,4 @@ permalink: /available/
 
 ## Before you inquire
 
-Animals are matched carefully, not dispatched like socks. Each listing includes the information needed to understand the individual animal, its background, and its care. Please review our placement, deposit, shipping, and live-arrival terms before contacting us.
+Welcoming an animal into your home should feel exciting, informed, and comfortable. Each listing shares the individual animal's background, temperament, and care needs. We are happy to answer questions, talk through enclosure setup, and help you decide whether a gecko is right for you. Please review our placement, deposit, shipping, and live-arrival terms before contacting us.
