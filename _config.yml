@@ -47,8 +47,8 @@ defaults:
       layout: "page"
 
 nav_links:
-  - title: Home
-    url: /
+  - title: Care
+    url: /care/
   - title: Available Geckos
     url: /available/
   - title: Observation Log
