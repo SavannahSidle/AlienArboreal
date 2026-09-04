@@ -17,7 +17,7 @@ description: "Crested geckos and select species raised with careful husbandry, b
 
 <section class="home-section">
   <div class="container">
-    <p>Life is astonishing. Every animal here is a living individual within a living system. Our work begins with that fact: care deeply, stay curious, and keep improving the world we build around them.</p>
+    <p>Life is astonishing. We are animals among animals, built from the same ancient matter and sustained by the same land and water. Our work begins there: care deeply, stay curious, and keep improving the worlds we build around them.</p>
     <p><a href="{{ '/about/' | relative_url }}">More about what we do and why &rarr;</a></p>
   </div>
 </section>
