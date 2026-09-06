@@ -1,8 +1,8 @@
 ---
 layout: page
-title: Available Geckos
-eyebrow: Current animals
-description: Healthy, carefully raised animals placed with people prepared to care for them well.
+title: Available
+eyebrow: Seeking new homes
+description: Individual geckos currently available for placement.
 permalink: /available/
 ---
 {% assign available_geckos = site.geckos | where: "status", "available" %}
