@@ -50,10 +50,18 @@ defaults:
       layout: "page"
 
 nav_links:
+  - title: Available
+    url: /available/
+  - title: Our Geckos
+    url: /our-geckos/
+  - title: Pairings
+    url: /pairings/
+  - title: Lineage
+    url: /lineage/
+  - title: Placed
+    url: /placed/
   - title: Care
     url: /care/
-  - title: Available Geckos
-    url: /available/
   - title: Observation Log
     url: /observations/
   - title: Breeding & Biology
