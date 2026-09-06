@@ -15,7 +15,7 @@ Curiosity strengthens care. We ask questions, watch closely, learn from outcomes
 
 ## Kinship
 
-My Mi'kmaq identity shapes how I understand our relationship with other living beings. Land and water do not sit outside us. They sustain us, move through us, and tie our lives together.
+Our perspective is shaped by a strong sense of kinship with other living beings. Land and water do not sit outside us. They sustain us, move through us, and tie our lives together.
 
 Humans are animals. We are mammals, built from the same ancient elements as geckos, plants, fungi, and every other living thing on Earth. The atoms in our bodies came from stars. The water within us has moved through this planet and countless forms of life.
 
