@@ -5,10 +5,18 @@ eyebrow: Ottawa, Ontario
 description: Ask about an available animal, an upcoming expo, or the biological minutiae currently eating our brain.
 permalink: /contact/
 ---
-{% unless site.instagram contains '[' %}[Instagram]({{ site.instagram }}){% endunless %}
+[Email](mailto:AlienArboreal@hotmail.com)
 
-{% unless site.facebook contains '[' %}[Facebook]({{ site.facebook }}){% endunless %}
+[Instagram](https://www.instagram.com/AlienArboreal)
 
-{% unless site.email contains '[' %}[Email us](mailto:{{ site.email }}){% endunless %}
+[Facebook](https://www.facebook.com/AlienArboreal)
+
+[TikTok](https://www.tiktok.com/@alien.arboreal)
+
+[YouTube](https://www.youtube.com/@Alien.Arboreal)
+
+[MorphMarket](https://www.morphmarket.com/stores/AlienArboreal)
+
+Website: [www.AlienArboreal.com](https://www.AlienArboreal.com)
 
 We do not offer checkout through the website. Every placement starts with an actual conversation.
