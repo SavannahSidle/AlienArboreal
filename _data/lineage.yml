@@ -1,0 +1,444 @@
+pairings:
+  - pairing: "Atlas × Cherry"
+    notes: ""
+    photos: []
+    offspring:
+      - id: "O1"
+        date: "Aug 8, 2026"
+        sex: ""
+        notes: ""
+        photos: []
+
+  - pairing: "Phoenix × Detox"
+    notes: ""
+    photos: []
+    offspring:
+      - id: "O1"
+        date: "Oct 2, 2024"
+        sex: ""
+        notes: ""
+        photos: []
+      - id: "O2"
+        date: "Oct 2, 2024"
+        sex: ""
+        notes: ""
+        photos: []
+      - id: "O3"
+        date: "Sep 2025"
+        sex: ""
+        notes: "Exact day unknown."
+        photos: []
+      - id: "O4"
+        date: "Sep 25"
+        sex: ""
+        notes: "Year unknown."
+        photos: []
+      - id: "O8"
+        date: "Jan 17, 2026"
+        sex: ""
+        notes: ""
+        photos: []
+
+  - pairing: "Vida × Rocket"
+    notes: ""
+    photos: []
+    offspring:
+      - id: "O3"
+        date: "Sep 28, 2024"
+        sex: ""
+        notes: ""
+        photos: []
+      - id: "O4"
+        date: "Sep 28, 2024"
+        sex: ""
+        notes: ""
+        photos: []
+      - id: "O5"
+        date: "Nov 25, 2024"
+        sex: "female"
+        notes: ""
+        photos: []
+      - id: "O8"
+        date: "Feb 2, 2025"
+        sex: ""
+        notes: ""
+        photos: []
+      - id: "O9"
+        date: "Jan 17, 2026"
+        sex: ""
+        notes: ""
+        photos: []
+      - id: "O10"
+        date: "Jan 17, 2026"
+        sex: ""
+        notes: ""
+        photos: []
+
+  - pairing: "Vida × Bugatti"
+    notes: ""
+    photos: []
+    offspring:
+      - id: "O2"
+        date: "Aug 2, 2024"
+        sex: "male"
+        notes: "Only remaining Bugatti baby."
+        photos: []
+
+  - pairing: "Icarus × Cherry"
+    notes: ""
+    photos: []
+    offspring:
+      - id: "O7"
+        date: "Aug 9, 2024"
+        sex: ""
+        notes: ""
+        photos: []
+      - id: "O11"
+        date: "Nov 6, 2024"
+        sex: ""
+        notes: ""
+        photos: []
+      - id: "O13"
+        date: "Dec 25, 2024"
+        sex: ""
+        notes: ""
+        photos: []
+      - id: "O17"
+        date: "Mar 3, 2025"
+        sex: ""
+        notes: ""
+        photos: []
+      - id: "O19"
+        date: "May 1, 2025"
+        sex: ""
+        notes: ""
+        photos: []
+      - id: "O20"
+        date: "Jan 26, 2026"
+        sex: ""
+        notes: ""
+        photos: []
+      - id: "O21"
+        date: "Jan 30, 2026"
+        sex: ""
+        notes: ""
+        photos: []
+
+  - pairing: "Icarus × Rocket"
+    notes: "Two small babies in one bin still need identity/date reconciliation."
+    photos: []
+    offspring:
+      - id: "O1"
+        date: "Apr 1, 2026"
+        sex: ""
+        notes: ""
+        photos: []
+      - id: "O2"
+        date: "Jul 26, 2026"
+        sex: ""
+        notes: ""
+        photos: []
+      - id: "O3"
+        date: "Aug 17, 2026"
+        sex: ""
+        notes: ""
+        photos: []
+      - id: "O4"
+        date: "Aug 17, 2026"
+        sex: ""
+        notes: ""
+        photos: []
+
+  - pairing: "Lemon × Charmander"
+    notes: ""
+    photos: []
+    offspring:
+      - id: "O4"
+        date: "Jul 23, 2024"
+        sex: ""
+        notes: ""
+        photos: []
+      - id: "O9"
+        date: "Oct 2, 2024"
+        sex: ""
+        notes: ""
+        photos: []
+      - id: "O10"
+        date: "Jan 9, 2025"
+        sex: ""
+        notes: ""
+        photos: []
+      - id: "O12"
+        date: "Jan 31, 2025"
+        sex: ""
+        notes: ""
+        photos: []
+
+  - pairing: "Atlas × Pomegranate"
+    notes: ""
+    photos: []
+    offspring:
+      - id: "O1"
+        date: "Oct 10, 2024"
+        sex: ""
+        notes: ""
+        photos: []
+      - id: "O3"
+        date: "Nov 29, 2024"
+        sex: ""
+        notes: ""
+        photos: []
+      - id: "O8"
+        date: "Feb 1"
+        sex: "female"
+        notes: "Label says 2023, but year is probably wrong; likely 2024."
+        photos: []
+
+  - pairing: "Shinx × Oyliv"
+    notes: ""
+    photos: []
+    offspring:
+      - id: "O2"
+        date: "Mar 4, 2025"
+        sex: ""
+        notes: ""
+        photos: []
+      - id: "O3"
+        date: "Mar 4, 2025"
+        sex: ""
+        notes: ""
+        photos: []
+      - id: "O5"
+        date: "May 3, 2025"
+        sex: ""
+        notes: ""
+        photos: []
+
+  - pairing: "Shinx × Rocket"
+    notes: ""
+    photos: []
+    offspring:
+      - id: "O1"
+        date: "Sep 23"
+        sex: ""
+        notes: "Year uncertain: 2023 or 2024."
+        photos: []
+      - id: "O2"
+        date: "Sep 23, 2023"
+        sex: "male"
+        notes: ""
+        photos: []
+      - id: "O3"
+        date: "Nov 4, 2023"
+        sex: ""
+        notes: ""
+        photos: []
+      - id: "O5"
+        date: "Dec 18, 2023"
+        sex: "male"
+        notes: ""
+        photos: []
+
+  - pairing: "Shinx × Tofu"
+    notes: ""
+    photos: []
+    offspring:
+      - id: "O1"
+        date: "Jul 4, 2025"
+        sex: ""
+        notes: "Light-based, spotty offspring; Tofu's only known offspring so far."
+        photos: []
+
+  - pairing: "Shinx × Soft Scale"
+    notes: ""
+    photos: []
+    offspring:
+      - id: "O4"
+        date: "Jun 7, 2026"
+        sex: ""
+        notes: ""
+        photos: []
+      - id: "O5"
+        date: "Sep 2, 2026"
+        sex: ""
+        notes: ""
+        photos: []
+      - id: "O6"
+        date: "Sep 2, 2026"
+        sex: ""
+        notes: ""
+        photos: []
+
+  - pairing: "Picky × Athena"
+    notes: ""
+    photos: []
+    offspring:
+      - id: "O1"
+        date: "Apr 5, 2026"
+        sex: ""
+        notes: ""
+        photos: []
+      - id: "O2"
+        date: "Apr 5, 2026"
+        sex: ""
+        notes: ""
+        photos: []
+      - id: "O5"
+        date: "Jun 16, 2026"
+        sex: ""
+        notes: ""
+        photos: []
+      - id: "O6"
+        date: "Jun 16, 2026"
+        sex: ""
+        notes: ""
+        photos: []
+      - id: "O7"
+        date: "Jul 26, 2026"
+        sex: ""
+        notes: ""
+        photos: []
+
+  - pairing: "Picky × Atlas"
+    notes: ""
+    photos: []
+    offspring:
+      - id: "O3"
+        date: "May 31, 2026"
+        sex: ""
+        notes: ""
+        photos: []
+      - id: "O4"
+        date: "May 31, 2026"
+        sex: ""
+        notes: ""
+        photos: []
+
+  - pairing: "Sable male × MaDo"
+    notes: "Sable male still needs a name."
+    photos: []
+    offspring:
+      - id: "O1"
+        date: "Apr 18, 2026"
+        sex: ""
+        notes: ""
+        photos: []
+      - id: "O2"
+        date: "Aug 15, 2026"
+        sex: ""
+        notes: ""
+        photos: []
+
+  - pairing: "Male Singularity × O4"
+    notes: "Male Singularity still needs a name."
+    photos: []
+    offspring:
+      - id: "O1"
+        date: "Aug 29, 2026"
+        sex: ""
+        notes: ""
+        photos: []
+
+  - pairing: "Copernicus × Vendetta"
+    notes: ""
+    photos: []
+    offspring:
+      - id: "O1"
+        date: "Aug 29, 2026"
+        sex: ""
+        notes: ""
+        photos: []
+      - id: "O2"
+        date: "Aug 29, 2026"
+        sex: ""
+        notes: ""
+        photos: []
+
+outside_source:
+  - source: "Exquisite Geckos"
+    lineage: "Fatality × Viscenya"
+    hatch_date: "unknown"
+    notes: "Cappuccino animal."
+    photos: []
+  - source: "Exquisite Geckos"
+    lineage: "Fatality × Zoe"
+    hatch_date: "early 2026"
+    notes: ""
+    photos: []
+  - source: "Exquisite Geckos"
+    lineage: "Azalea × Snow Drift"
+    hatch_date: "early 2026"
+    notes: "Patterned, not Dalmatian; probably not keeping."
+    photos: []
+  - source: "Exquisite Geckos"
+    lineage: "Unidentified adult male"
+    hatch_date: "unknown"
+    notes: "Large crest; does not fit current breeding plans."
+    photos: []
+
+adults:
+  - name: "Vida"
+    notes: ""
+    photos: []
+  - name: "Tofu"
+    notes: ""
+    photos: []
+  - name: "Picky"
+    notes: ""
+    photos: []
+  - name: "Athena"
+    notes: ""
+    photos: []
+  - name: "Rocket"
+    notes: ""
+    photos: []
+  - name: "Icarus"
+    notes: ""
+    photos: []
+  - name: "Singularity"
+    notes: ""
+    photos: []
+  - name: "Male Singularity"
+    notes: "Unnamed."
+    photos: []
+  - name: "Vendetta"
+    notes: ""
+    photos: []
+  - name: "Copernicus"
+    notes: ""
+    photos: []
+  - name: "O4"
+    notes: ""
+    photos: []
+  - name: "Shinx"
+    notes: ""
+    photos: []
+  - name: "Soft Scale"
+    notes: ""
+    photos: []
+  - name: "Female Sable"
+    notes: "Hatched Feb 26, 2025. Currently unnamed; prior/source name may have been ‘Racer’."
+    photos: []
+  - name: "Nova"
+    notes: "Female."
+    photos: []
+
+unresolved:
+  - item: "Mislabeled Copernicus × Sangria Lily White"
+    notes: "Likely actually Lemon × Charmander or Atlas × Pomegranate."
+  - item: "Atlas × Pomegranate O8 year"
+    notes: "Label says 2023; likely 2024."
+  - item: "Shinx × Rocket O1 year"
+    notes: "2023 or 2024."
+  - item: "Phoenix × Detox O4 year"
+    notes: "Unknown."
+  - item: "Icarus × Rocket mystery babies"
+    notes: "Two small babies in one bin; identity/date still need reconciling."
+  - item: "Unidentified Exquisite Geckos male"
+    notes: "Identity unresolved."
+  - item: "Name needed: male Singularity"
+    notes: ""
+  - item: "Name needed: Sable male"
+    notes: ""
+  - item: "Name needed: female Sable"
+    notes: ""
