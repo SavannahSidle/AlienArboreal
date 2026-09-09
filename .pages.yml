@@ -1,0 +1,148 @@
+media:
+  - name: lineage_images
+    label: Lineage photos
+    input: assets/images/lineage
+    output: /assets/images/lineage
+    categories: [image]
+    rename: safe
+
+settings:
+  content:
+    merge: true
+  commit:
+    identity: user
+
+content:
+  - name: lineage
+    label: Lineage
+    type: file
+    path: _data/lineage.yml
+    format: yaml
+    fields:
+      - name: pairings
+        label: Pairings & offspring
+        type: object
+        list:
+          collapsible:
+            collapsed: true
+            summary: "{pairing}"
+        fields:
+          - name: pairing
+            label: Pairing
+            type: string
+            required: true
+          - name: notes
+            label: Pairing notes
+            type: text
+          - name: photos
+            label: Pairing photos
+            type: image
+            options:
+              media: lineage_images
+              multiple:
+                max: 12
+              unique: true
+              rename: safe
+          - name: offspring
+            label: Offspring
+            type: object
+            list:
+              collapsible:
+                collapsed: true
+                summary: "{id} · {date}"
+            fields:
+              - name: id
+                label: ID
+                type: string
+                required: true
+              - name: date
+                label: Hatch date
+                type: string
+                description: "Free text so uncertain dates can stay uncertain."
+              - name: sex
+                label: Sex
+                type: string
+              - name: notes
+                label: Notes
+                type: text
+              - name: photos
+                label: Photos
+                type: image
+                options:
+                  media: lineage_images
+                  multiple:
+                    max: 12
+                  unique: true
+                  rename: safe
+
+      - name: outside_source
+        label: Outside-source animals
+        type: object
+        list:
+          collapsible:
+            collapsed: true
+            summary: "{lineage}"
+        fields:
+          - name: source
+            label: Source
+            type: string
+          - name: lineage
+            label: Lineage / animal
+            type: string
+            required: true
+          - name: hatch_date
+            label: Hatch date
+            type: string
+          - name: notes
+            label: Notes
+            type: text
+          - name: photos
+            label: Photos
+            type: image
+            options:
+              media: lineage_images
+              multiple:
+                max: 12
+              unique: true
+              rename: safe
+
+      - name: adults
+        label: Adults / established animals
+        type: object
+        list:
+          collapsible:
+            collapsed: true
+            summary: "{name}"
+        fields:
+          - name: name
+            label: Name
+            type: string
+            required: true
+          - name: notes
+            label: Notes
+            type: text
+          - name: photos
+            label: Photos
+            type: image
+            options:
+              media: lineage_images
+              multiple:
+                max: 12
+              unique: true
+              rename: safe
+
+      - name: unresolved
+        label: Unresolved records
+        type: object
+        list:
+          collapsible:
+            collapsed: true
+            summary: "{item}"
+        fields:
+          - name: item
+            label: Record
+            type: string
+            required: true
+          - name: notes
+            label: Notes
+            type: text
