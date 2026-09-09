@@ -5,37 +5,49 @@ eyebrow: Family histories
 description: Parentage, offspring, and genetic relationships across Alien Arboreal lines.
 permalink: /lineage/
 ---
-This page follows relationships across generations: parentage, offspring, and the lines that connect individual animals over time.
+This is a living record of family relationships across generations. Dates or identities that are still being reconciled are marked rather than guessed.
 
-It is intended as a living record of family history rather than a list of breeding roles.
+{% for family in site.data.lineage.pairings %}
+<section class="lineage-family">
+  <h2>{{ family.pairing }}</h2>
+  {% if family.notes != "" %}<p class="lineage-note">{{ family.notes }}</p>{% endif %}
 
-## Shinx × Rocket
+  {% if family.photos and family.photos.size > 0 %}
+  <div class="lineage-gallery">
+    {% for photo in family.photos %}<img src="{{ photo | relative_url }}" alt="{{ family.pairing }}">{% endfor %}
+  </div>
+  {% endif %}
 
-Shinx and Rocket have produced multiple Super Dalmatian offspring together.
+  <div class="lineage-offspring">
+  {% for animal in family.offspring %}
+    <article class="lineage-record">
+      {% if animal.photos and animal.photos.size > 0 %}
+      <div class="lineage-gallery">
+        {% for photo in animal.photos %}<img src="{{ photo | relative_url }}" alt="{{ family.pairing }} {{ animal.id }}">{% endfor %}
+      </div>
+      {% endif %}
+      <h3>{{ animal.id }}</h3>
+      <p class="card-meta">{{ animal.date }}{% if animal.sex != "" %} · {{ animal.sex }}{% endif %}</p>
+      {% if animal.notes != "" %}<p>{{ animal.notes }}</p>{% endif %}
+    </article>
+  {% endfor %}
+  </div>
+</section>
+{% endfor %}
 
-Known offspring recorded in our notes include:
+## Outside-source lineage
 
-- ShRo01 Nova — hatched September 21, 2023
-- ShRo02 — hatched September 23, 2023
-- ShRo03 — hatched November 4, 2023
-- ShRo04 — hatched November 7, 2023
-- ShRo05 — hatched December 19, 2023
-- ShRo06 — hatched December 19, 2023
-- ShRo07 — hatched February 16, 2024
-- ShRo08 — hatched February 18, 2024
+These records preserve known parentage for animals originating outside Alien Arboreal.
 
-## Shinx × Tofu
-
-Shinx and Tofu have one known offspring so far: a light-based, heavily spotted gecko.
-
-## Atlas × Cherry
-
-Atlas and Cherry have produced a small number of offspring together.
-
-## Icarus × Cherry
-
-Icarus and Cherry have produced multiple offspring together and represent one of the more established family lines in our records.
-
----
-
-Lineage records will continue to expand as individual animals, offspring, and family relationships are documented in more detail.
+{% for animal in site.data.lineage.outside_source %}
+<section class="lineage-record">
+  {% if animal.photos and animal.photos.size > 0 %}
+  <div class="lineage-gallery">
+    {% for photo in animal.photos %}<img src="{{ photo | relative_url }}" alt="{{ animal.lineage }}">{% endfor %}
+  </div>
+  {% endif %}
+  <h3>{{ animal.lineage }}</h3>
+  <p class="card-meta">{{ animal.source }} · {{ animal.hatch_date }}</p>
+  {% if animal.notes != "" %}<p>{{ animal.notes }}</p>{% endif %}
+</section>
+{% endfor %}
