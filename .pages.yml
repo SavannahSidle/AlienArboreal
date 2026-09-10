@@ -29,7 +29,6 @@ content:
       field: create
     view:
       primary: name
-      fields: [name, status, sex, hatch_date]
     fields:
       - name: name
         label: Name
@@ -44,13 +43,13 @@ content:
         required: true
         options:
           values:
-            - value: with-us
+            - name: with-us
               label: With us
-            - value: available
+            - name: available
               label: Available
-            - value: placed
+            - name: placed
               label: Placed
-            - value: lineage
+            - name: lineage
               label: Lineage record
       - name: sex
         label: Sex
@@ -96,6 +95,9 @@ content:
       - name: body
         label: Notes / profile
         type: rich-text
+        options:
+          media: gecko_images
+          rename: safe
 
   - name: lineage
     label: Lineage
