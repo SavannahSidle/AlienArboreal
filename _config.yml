@@ -54,16 +54,12 @@ nav_links:
     url: /available/
   - title: Our Geckos
     url: /our-geckos/
-  - title: Pairings
-    url: /pairings/
-  - title: Lineage
-    url: /lineage/
   - title: Care
     url: /care/
+  - title: Biology
+    url: /biology/
   - title: Observation Log
     url: /observations/
-  - title: Biology & Husbandry
-    url: /breeding-biology/
   - title: About
     url: /about/
   - title: Contact
