@@ -58,8 +58,6 @@ nav_links:
     url: /pairings/
   - title: Lineage
     url: /lineage/
-  - title: Placed
-    url: /placed/
   - title: Care
     url: /care/
   - title: Observation Log
