@@ -1,4 +1,10 @@
 media:
+  - name: gecko_images
+    label: Gecko photos
+    input: assets/images/geckos
+    output: /assets/images/geckos
+    categories: [image]
+    rename: safe
   - name: lineage_images
     label: Lineage photos
     input: assets/images/lineage
@@ -13,11 +19,91 @@ settings:
     identity: user
 
 content:
+  - name: geckos
+    label: Geckos & availability
+    type: collection
+    path: _geckos
+    format: yaml-frontmatter
+    filename:
+      template: "{name}.md"
+      field: create
+    view:
+      primary: name
+      fields: [name, status, sex, hatch_date]
+    fields:
+      - name: name
+        label: Name
+        type: string
+        required: true
+      - name: animal_id
+        label: Animal ID
+        type: string
+      - name: status
+        label: Status
+        type: select
+        required: true
+        options:
+          values:
+            - value: with-us
+              label: With us
+            - value: available
+              label: Available
+            - value: placed
+              label: Placed
+            - value: lineage
+              label: Lineage record
+      - name: sex
+        label: Sex
+        type: string
+      - name: hatch_date
+        label: Hatch date
+        type: string
+        description: "Free text so uncertain dates can stay uncertain."
+      - name: morph
+        label: Traits / morph
+        type: string
+      - name: weight
+        label: Weight
+        type: string
+      - name: price
+        label: Price
+        type: string
+        description: "Used only when relevant to an available animal."
+      - name: summary
+        label: Short description
+        type: text
+      - name: parents
+        label: Parentage / lineage
+        type: string
+      - name: source
+        label: Source
+        type: string
+      - name: image
+        label: Main photo
+        type: image
+        options:
+          media: gecko_images
+          rename: safe
+      - name: gallery
+        label: More photos
+        type: image
+        options:
+          media: gecko_images
+          multiple:
+            max: 20
+          unique: true
+          rename: safe
+      - name: body
+        label: Notes / profile
+        type: rich-text
+
   - name: lineage
     label: Lineage
     type: file
     path: _data/lineage.yml
     format: yaml
+    operations:
+      delete: false
     fields:
       - name: pairings
         label: Pairings & offspring
@@ -58,7 +144,6 @@ content:
               - name: date
                 label: Hatch date
                 type: string
-                description: "Free text so uncertain dates can stay uncertain."
               - name: sex
                 label: Sex
                 type: string
@@ -74,7 +159,6 @@ content:
                     max: 12
                   unique: true
                   rename: safe
-
       - name: outside_source
         label: Outside-source animals
         type: object
@@ -105,7 +189,6 @@ content:
                 max: 12
               unique: true
               rename: safe
-
       - name: adults
         label: Adults / established animals
         type: object
@@ -130,7 +213,6 @@ content:
                 max: 12
               unique: true
               rename: safe
-
       - name: unresolved
         label: Unresolved records
         type: object
