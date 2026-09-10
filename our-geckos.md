@@ -15,7 +15,9 @@ permalink: /our-geckos/
 
 <h2 id="individuals">Individuals</h2>
 
-{% assign current_geckos = site.geckos | where_exp: "gecko", "gecko.status == 'with-us' or gecko.status == 'available'" | sort: "name" %}
+{% assign with_us = site.geckos | where: "status", "with-us" %}
+{% assign available = site.geckos | where: "status", "available" %}
+{% assign current_geckos = with_us | concat: available | sort: "name" %}
 {% if current_geckos.size > 0 %}
 <div class="grid grid-3">{% for gecko in current_geckos %}<a href="{{ gecko.url | relative_url }}" class="card">{% if gecko.image %}<div class="card-image"><img src="{{ gecko.image | relative_url }}" alt="{{ gecko.name }}" loading="lazy"></div>{% endif %}<div class="card-body"><h3 class="card-title">{{ gecko.name }}</h3><div class="card-meta">{% if gecko.sex %}<span>{{ gecko.sex }}</span>{% endif %}{% if gecko.morph %}<span>{{ gecko.morph }}</span>{% endif %}</div>{% if gecko.summary %}<p class="card-summary">{{ gecko.summary }}</p>{% endif %}</div></a>{% endfor %}</div>
 {% else %}
