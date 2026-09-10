@@ -1,23 +1,33 @@
 ---
 layout: page
-title: Breeding & Biology
+title: Biology & Husbandry
 eyebrow: Reference library
 description: Care informed by biology, close observation, and genuine curiosity about living systems.
 permalink: /breeding-biology/
 ---
 
-## Breeding
+This section is the reference library: what we have learned about how these animals develop, behave, reproduce, inherit traits, eat, interact with their environments, and respond to care over time.
 
-Pairing decisions begin with health, compatibility, genetics, and responsibility for every new life that may begin. The animals create those lives; our role is to make careful choices and provide the conditions they need to thrive. Here we explore reproduction, inheritance, development, incubation, and the thinking behind each pairing.
+## Biology & natural history
 
-## Biology
+Development, behaviour, anatomy, physiology, seasonality, reproduction, and the biological questions that emerge when animals are observed closely over time.
 
-Growth, development, behaviour, inheritance, and the biological questions that emerge when animals are observed closely over time. Life is complex. That is the interesting part.
+## Genetics & inheritance
 
-## Husbandry
+Morphs, visible traits, inheritance, lineage, variability between siblings, and what can and cannot reasonably be inferred from phenotype alone.
 
-Husbandry changes with the animal and its stage of life. Juveniles live in appropriately sized bins with paper towel substrate so eating, waste, growth, and health can be monitored clearly. As they mature, they move into planted bioactive enclosures. Adults live fully bioactive.
+## Reproduction & development
 
-This section covers feeding, enclosure conditions, bioactive systems, seasonal adjustments, health monitoring, and the reasoning behind changes in practice.
+Pairing behaviour, egg production, incubation, hatching, early development, and patterns observed across family lines. Individual pairing records live separately in [Pairings]({{ '/pairings/' | relative_url }}), while parentage and offspring records live in [Lineage]({{ '/lineage/' | relative_url }}).
 
-The content here is organized by subject. For dated events and raw observations, visit the [Observation Log]({{ '/observations/' | relative_url }}).
+## Care & husbandry
+
+Feeding, enclosure conditions, bioactive systems, seasonal adjustments, health monitoring, and the reasoning behind changes in practice. Husbandry changes with the animal and its stage of life.
+
+## Development & health
+
+Growth, body condition, shedding, feeding patterns, waste, mobility, behaviour changes, and other signals that help us notice when something has changed.
+
+## Observation-based learning
+
+The reference material here develops from husbandry, documented outcomes, outside research, and repeated observation. For dated events and raw field notes, visit the [Observation Log]({{ '/observations/' | relative_url }}).
