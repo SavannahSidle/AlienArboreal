@@ -1,33 +1,29 @@
 ---
 layout: page
-title: Biology & Husbandry
+title: Biology
 eyebrow: Reference library
-description: Care informed by biology, close observation, and genuine curiosity about living systems.
-permalink: /breeding-biology/
+description: Natural history, genetics, development, and reproduction.
+permalink: /biology/
 ---
 
-This section is the reference library: what we have learned about how these animals develop, behave, reproduce, inherit traits, eat, interact with their environments, and respond to care over time.
+This section is for the **biology itself**: how these animals develop, behave, reproduce, inherit traits, and vary across individuals and family lines.
 
-## Biology & natural history
+## Natural history
 
-Development, behaviour, anatomy, physiology, seasonality, reproduction, and the biological questions that emerge when animals are observed closely over time.
+Behaviour, anatomy, physiology, seasonality, and the biological patterns that emerge through close observation.
 
 ## Genetics & inheritance
 
-Morphs, visible traits, inheritance, lineage, variability between siblings, and what can and cannot reasonably be inferred from phenotype alone.
+Morphs, visible traits, inheritance, variability between siblings, and what can and cannot reasonably be inferred from phenotype alone.
 
 ## Reproduction & development
 
-Pairing behaviour, egg production, incubation, hatching, early development, and patterns observed across family lines. Individual pairing records live separately in [Pairings]({{ '/pairings/' | relative_url }}), while parentage and offspring records live in [Lineage]({{ '/lineage/' | relative_url }}).
+Pairing behaviour, egg production, incubation, hatching, and early development.
 
-## Care & husbandry
+The actual animals and family records live under [Our Geckos]({{ '/our-geckos/' | relative_url }}), including [Pairings]({{ '/pairings/' | relative_url }}) and [Family Histories]({{ '/lineage/' | relative_url }}).
 
-Feeding, enclosure conditions, bioactive systems, seasonal adjustments, health monitoring, and the reasoning behind changes in practice. Husbandry changes with the animal and its stage of life.
+## Growth & health
 
-## Development & health
+Growth, body condition, shedding, feeding patterns, waste, mobility, behaviour changes, and other biological signals worth documenting.
 
-Growth, body condition, shedding, feeding patterns, waste, mobility, behaviour changes, and other signals that help us notice when something has changed.
-
-## Observation-based learning
-
-The reference material here develops from husbandry, documented outcomes, outside research, and repeated observation. For dated events and raw field notes, visit the [Observation Log]({{ '/observations/' | relative_url }}).
+For enclosure setup, feeding, bioactive systems, and day-to-day husbandry, use the separate [Care]({{ '/care/' | relative_url }}) section.
