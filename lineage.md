@@ -13,9 +13,11 @@ permalink: /lineage/
 <div class="lineage-list">
 {% for family in site.data.lineage.pairings %}
 {% assign parents = family.pairing | split: ' × ' %}
+{% assign parent_one_slug = parents[0] | slugify %}
+{% assign parent_two_slug = parents[1] | slugify %}
 <details class="lineage-family">
   <summary>
-    <span class="lineage-pair"><a href="{{ '/geckos/' | append: (parents[0] | slugify) | append: '/' | relative_url }}">{{ parents[0] }}</a> × <a href="{{ '/geckos/' | append: (parents[1] | slugify) | append: '/' | relative_url }}">{{ parents[1] }}</a></span>
+    <span class="lineage-pair"><a href="{{ '/geckos/' | append: parent_one_slug | append: '/' | relative_url }}">{{ parents[0] }}</a> × <a href="{{ '/geckos/' | append: parent_two_slug | append: '/' | relative_url }}">{{ parents[1] }}</a></span>
     <span class="lineage-preview">{% for animal in family.offspring %}{{ animal.id }}{% unless forloop.last %} · {% endunless %}{% endfor %}</span>
   </summary>
   <div class="lineage-family-body">
