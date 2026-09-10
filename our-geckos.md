@@ -13,3 +13,12 @@ permalink: /our-geckos/
 {% else %}
 <div class="empty-state"><p>Profiles are being added.</p></div>
 {% endif %}
+
+## Placed
+
+{% assign placed_geckos = site.geckos | where: "status", "placed" | sort: "name" %}
+{% if placed_geckos.size > 0 %}
+<div class="grid grid-3">{% for gecko in placed_geckos %}<a href="{{ gecko.url | relative_url }}" class="card">{% if gecko.image %}<div class="card-image"><img src="{{ gecko.image | relative_url }}" alt="{{ gecko.name }}" loading="lazy"></div>{% endif %}<div class="card-body"><h3 class="card-title">{{ gecko.name }}</h3><div class="card-meta">{% if gecko.sex %}<span>{{ gecko.sex }}</span>{% endif %}{% if gecko.morph %}<span>{{ gecko.morph }}</span>{% endif %}</div></div></a>{% endfor %}</div>
+{% else %}
+<p>No placed profiles have been added yet.</p>
+{% endif %}
