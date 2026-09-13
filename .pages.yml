@@ -20,23 +20,35 @@ settings:
 
 content:
   - name: geckos
-    label: Geckos & availability
+    label: Geckos
     type: collection
     path: _geckos
     format: yaml-frontmatter
     filename:
-      template: "{name}.md"
+      template: "{animal_id}.md"
       field: create
     view:
       primary: name
     fields:
+      - name: animal_id
+        label: Animal ID
+        type: string
+        required: true
+        description: "Create the ID first. This becomes the record filename."
       - name: name
         label: Name
         type: string
         required: true
-      - name: animal_id
-        label: Animal ID
-        type: string
+      - name: photos
+        label: Photos
+        type: image
+        options:
+          media: gecko_images
+          multiple:
+            max: 12
+          unique: true
+          rename: safe
+        description: "Add several photos here. The first photo becomes the main profile image."
       - name: status
         label: Status
         type: select
@@ -77,21 +89,6 @@ content:
       - name: source
         label: Source
         type: string
-      - name: image
-        label: Main photo
-        type: image
-        options:
-          media: gecko_images
-          rename: safe
-      - name: gallery
-        label: More photos
-        type: image
-        options:
-          media: gecko_images
-          multiple:
-            max: 20
-          unique: true
-          rename: safe
       - name: body
         label: Notes / profile
         type: rich-text
