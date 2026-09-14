@@ -19,7 +19,7 @@ Our perspective is shaped by a strong sense of kinship with other living beings.
 
 Humans are animals. We are mammals, built from the same ancient elements as geckos, plants, fungi, and every other living thing on Earth. The atoms in our bodies came from stars. The water within us has moved through this planet and countless forms of life.
 
-That shared material reality carries responsibility. When we care for an animal, we are caring for another expression of life—different from us, never lesser. Good husbandry is respect made practical.
+That shared material reality carries responsibility. When we care for an animal, we are caring for another expression of life, different from us, never lesser. Good husbandry is respect made practical.
 
 ## Husbandry through each life stage
 
