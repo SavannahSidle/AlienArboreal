@@ -28,14 +28,18 @@ description: "Crested geckos and select species raised with careful husbandry, b
       <h2>Currently Available</h2>
       <a href="{{ '/available/' | relative_url }}">View all &rarr;</a>
     </div>
-    {% assign featured_geckos = site.geckos | where: "featured", true | where: "status", "available" %}
-    {% if featured_geckos.size > 0 %}
+    {% assign available_geckos = site.geckos | where: "status", "available" | sort: "name" %}
+    {% if available_geckos.size > 0 %}
     <div class="grid grid-3">
-      {% for gecko in featured_geckos %}
-      <a href="{{ gecko.url }}" class="card">
-        {% if gecko.image %}
+      {% for gecko in available_geckos limit:3 %}
+      {% assign card_photo = gecko.image %}
+      {% if card_photo == nil and gecko.photos and gecko.photos.size > 0 %}
+        {% assign card_photo = gecko.photos[0] %}
+      {% endif %}
+      <a href="{{ gecko.url | relative_url }}" class="card">
+        {% if card_photo %}
         <div class="card-image">
-          <img src="{{ gecko.image }}" alt="{{ gecko.name }}" loading="lazy">
+          <img src="{{ card_photo | relative_url }}" alt="{{ gecko.name }}" loading="lazy">
         </div>
         {% endif %}
         <div class="card-body">
@@ -51,12 +55,7 @@ description: "Crested geckos and select species raised with careful husbandry, b
     </div>
     {% else %}
     <div class="empty-state">
-      <p>No animals currently listed. New availability is posted on social media first.</p>
-      <p>
-        <a href="{{ site.instagram }}">Instagram</a> &middot;
-        <a href="{{ site.facebook }}">Facebook</a> &middot;
-        <a href="{{ '/contact/' | relative_url }}">Contact</a>
-      </p>
+      <p>No animals are currently listed as available.</p>
     </div>
     {% endif %}
   </div>
@@ -72,7 +71,7 @@ description: "Crested geckos and select species raised with careful husbandry, b
     {% if recent_obs.size > 0 %}
     <div class="grid grid-3">
       {% for obs in recent_obs limit:3 %}
-      <a href="{{ obs.url }}" class="card">
+      <a href="{{ obs.url | relative_url }}" class="card">
         <div class="card-body">
           <h3 class="card-title">{{ obs.title }}</h3>
           <div class="card-meta">
