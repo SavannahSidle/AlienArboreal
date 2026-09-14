@@ -38,4 +38,20 @@ permalink: /care/
       <p class="card-summary">Escape-proof arboreal housing, group management, humidity cycling, tiny feeders, calcium, and hatchling control.</p>
     </div>
   </a>
+
+  <a class="card" href="{{ '/care/colombian-boa/' | relative_url }}">
+    <div class="card-body">
+      <p class="eyebrow">Boa imperator</p>
+      <h2 class="card-title">Colombian Boa Care</h2>
+      <p class="card-summary">Large secure housing, thermal gradients, humidity, climbing structure, feeding, handling, and long-term planning.</p>
+    </div>
+  </a>
+
+  <a class="card" href="{{ '/care/chinese-fire-belly-newt/' | relative_url }}">
+    <div class="card-body">
+      <p class="eyebrow">Cynops orientalis</p>
+      <h2 class="card-title">Chinese Fire Belly Newt Care</h2>
+      <p class="card-summary">Cool planted aquaria, clean water, aquatic feeding, land access, temperature control, and safe group care.</p>
+    </div>
+  </a>
 </div>
