@@ -3,7 +3,9 @@ layout: default
 ---
 {% assign public_content = content
   | replace: 'More notes and photos can be added here through the site editor.', ''
+  | replace: 'More notes and photos can be added through the site editor.', ''
   | replace: 'More photos and notes can be added through the site editor.', ''
+  | replace: 'Additional notes and photos can be added through the site editor.', ''
   | replace: 'Photos and additional notes can be managed through the site editor.', ''
 %}
 {% assign hero_photo = page.image %}
