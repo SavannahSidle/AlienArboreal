@@ -116,6 +116,12 @@ content:
             label: Pairing
             type: string
             required: true
+          - name: source
+            label: Source
+            type: string
+          - name: hatch_date
+            label: Hatch date
+            type: string
           - name: notes
             label: Pairing notes
             type: text
@@ -158,36 +164,6 @@ content:
                     max: 12
                   unique: true
                   rename: safe
-      - name: outside_source
-        label: Outside-source animals
-        type: object
-        list:
-          collapsible:
-            collapsed: true
-            summary: "{lineage}"
-        fields:
-          - name: source
-            label: Source
-            type: string
-          - name: lineage
-            label: Lineage / animal
-            type: string
-            required: true
-          - name: hatch_date
-            label: Hatch date
-            type: string
-          - name: notes
-            label: Notes
-            type: text
-          - name: photos
-            label: Photos
-            type: image
-            options:
-              media: lineage_images
-              multiple:
-                max: 12
-              unique: true
-              rename: safe
       - name: adults
         label: Adults / established animals
         type: object
