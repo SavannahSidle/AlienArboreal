@@ -138,22 +138,26 @@ pairings:
       - { id: "O1", date: "Aug 29, 2026", sex: "", notes: "", photos: [] }
       - { id: "O2", date: "Aug 29, 2026", sex: "", notes: "", photos: [] }
 
-outside_source:
-  - source: "Exquisite Geckos"
-    lineage: "Fatality × Viscenya"
+  - pairing: "Fatality × Viscenya"
+    source: "Exquisite Geckos"
     hatch_date: "unknown"
     notes: "Cappuccino animal."
     photos: []
-  - source: "Exquisite Geckos"
-    lineage: "Fatality × Zoe"
+    offspring: []
+
+  - pairing: "Fatality × Zoe"
+    source: "Exquisite Geckos"
     hatch_date: "early 2026"
     notes: ""
     photos: []
-  - source: "Exquisite Geckos"
-    lineage: "Azalea × Snow Drift"
+    offspring: []
+
+  - pairing: "Azalea × Snow Drift"
+    source: "Exquisite Geckos"
     hatch_date: "early 2026"
-    notes: "Patterned, not Dalmatian; probably not keeping."
+    notes: "Patterned, not Dalmatian."
     photos: []
+    offspring: []
 
 adults:
   - { name: "Vida", notes: "", photos: [] }
