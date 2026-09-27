@@ -82,15 +82,13 @@ layout: default
         {% if fp[0] == page.name or fp[1] == page.name %}
           {% if fp[0] == page.name %}{% assign partner_name = fp[1] %}{% else %}{% assign partner_name = fp[0] %}{% endif %}
           {% assign partner = site.geckos | where: "name", partner_name | first %}
+          {% assign profile_offspring = site.geckos | where: "parents", family.pairing %}
           <div class="profile-pairing">
             <div class="profile-pairing-title">{{ page.name }} × {% if partner %}<a href="{{ partner.url | relative_url }}">{{ partner_name }}</a>{% else %}{{ partner_name }}{% endif %}</div>
             <div class="profile-children">
-              {% if family.linked_offspring %}
-                {% for linked in family.linked_offspring %}
-                  {% assign linked_profile = site.geckos | where: "name", linked.name | first %}
-                  <div class="profile-tree-node">{% if linked_profile %}<a href="{{ linked_profile.url | relative_url }}">{{ linked.name }}</a>{% else %}{{ linked.name }}{% endif %}<small>profile</small></div>
-                {% endfor %}
-              {% endif %}
+              {% for child in profile_offspring %}
+                <div class="profile-tree-node"><a href="{{ child.url | relative_url }}">{{ child.name }}</a>{% if child.hatch_date %}<small>{{ child.hatch_date }}</small>{% else %}<small>profile</small>{% endif %}</div>
+              {% endfor %}
               {% for animal in family.offspring %}
                 <div class="profile-tree-node">{{ animal.id }}{% if animal.date != "" %}<small>{{ animal.date }}</small>{% endif %}</div>
               {% endfor %}
