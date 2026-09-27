@@ -77,6 +77,7 @@ permalink: /lineage/
       <div class="tree-stem"></div>
       <div class="tree-branch"></div>
       <div class="tree-children">
+      {% if family.linked_offspring %}{% for linked in family.linked_offspring %}{% assign linked_profile = site.geckos | where: "name", linked.name | first %}<div class="tree-node tree-child">{% if linked_profile %}<a href="{{ linked_profile.url | relative_url }}">{{ linked.name }}</a>{% else %}{{ linked.name }}{% endif %}<small>profile</small></div>{% endfor %}{% endif %}
       {% for animal in family.offspring %}
         <div class="tree-node tree-child">{{ animal.id }}{% if animal.date != "" %}<small>{{ animal.date }}</small>{% endif %}{% if animal.sex != "" %}<small>{{ animal.sex }}</small>{% endif %}</div>
       {% endfor %}
