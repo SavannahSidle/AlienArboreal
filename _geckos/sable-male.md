@@ -1,7 +1,8 @@
 ---
 name: Sable male
-status: lineage
+identifier: Male Sable
+status: available
 sex: Male
-summary: Currently unnamed; lineage profile for the Sable male.
+summary: Currently unnamed and available for placement.
 ---
-Paired with MaDo. A permanent name, photos, and additional notes can be added through the site editor.
+He has offspring with MaDo and remains part of the family-history record.
