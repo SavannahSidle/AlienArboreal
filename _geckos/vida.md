@@ -4,8 +4,8 @@ status: with-us
 sex: Male
 hatch_date: January 12, 2023
 morph: Red Ink Spot Harlequin
-parents: Camo × Lux
+parents: Keshin Clone × unknown
 source: MP Cresties
-summary: Individual profile and lineage record for Vida.
+summary: MP Cresties male with Keshin Clone lineage; second parent still to confirm.
 ---
-More notes and photos can be added here through the site editor.
+The second parent in Vida's recorded lineage still needs confirmation.
