@@ -2,6 +2,7 @@
 name: Vendetta
 status: with-us
 sex: Female
-summary: Individual profile and lineage record for Vendetta.
+morph: Pink Porthole
+summary: Pink porthole female.
 ---
-More notes and photos can be added through the site editor.
+Vendetta has offspring with Copernicus.
