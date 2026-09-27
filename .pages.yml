@@ -164,6 +164,39 @@ content:
                     max: 12
                   unique: true
                   rename: safe
+      - name: lineage_records
+        label: Additional family histories
+        type: object
+        list:
+          collapsible:
+            collapsed: true
+            summary: "{parents}"
+        fields:
+          - name: parents
+            label: Parents
+            type: string
+            required: true
+          - name: source
+            label: Source
+            type: string
+          - name: hatch_date
+            label: Hatch date
+            type: string
+          - name: traits
+            label: Traits / morph
+            type: string
+          - name: notes
+            label: Notes
+            type: text
+          - name: photos
+            label: Photos
+            type: image
+            options:
+              media: lineage_images
+              multiple:
+                max: 12
+              unique: true
+              rename: safe
       - name: adults
         label: Adults / established animals
         type: object
