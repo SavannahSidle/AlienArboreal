@@ -81,9 +81,6 @@ pairings:
   - pairing: "Shinx × Rocket"
     notes: ""
     photos: []
-    linked_offspring:
-      - { name: "O4" }
-      - { name: "Nova" }
     offspring:
       - { id: "O1", date: "Sep 23", sex: "", notes: "Year uncertain: 2023 or 2024.", photos: [] }
       - { id: "O2", date: "Sep 23, 2023", sex: "male", notes: "", photos: [] }
