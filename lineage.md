@@ -59,6 +59,7 @@ permalink: /lineage/
 {% assign parents = family.pairing | split: ' × ' %}
 {% assign p1 = site.geckos | where: "name", parents[0] | first %}
 {% assign p2 = site.geckos | where: "name", parents[1] | first %}
+{% assign profile_offspring = site.geckos | where: "parents", family.pairing %}
 <details class="lineage-family">
   <summary>
     <span class="lineage-pair">{% if p1 %}<a href="{{ p1.url | relative_url }}">{{ parents[0] }}</a>{% else %}{{ parents[0] }}{% endif %} × {% if p2 %}<a href="{{ p2.url | relative_url }}">{{ parents[1] }}</a>{% else %}{{ parents[1] }}{% endif %}</span>
@@ -77,7 +78,7 @@ permalink: /lineage/
       <div class="tree-stem"></div>
       <div class="tree-branch"></div>
       <div class="tree-children">
-      {% if family.linked_offspring %}{% for linked in family.linked_offspring %}{% assign linked_profile = site.geckos | where: "name", linked.name | first %}<div class="tree-node tree-child">{% if linked_profile %}<a href="{{ linked_profile.url | relative_url }}">{{ linked.name }}</a>{% else %}{{ linked.name }}{% endif %}<small>profile</small></div>{% endfor %}{% endif %}
+      {% for child in profile_offspring %}<div class="tree-node tree-child"><a href="{{ child.url | relative_url }}">{{ child.name }}</a>{% if child.hatch_date %}<small>{{ child.hatch_date }}</small>{% else %}<small>profile</small>{% endif %}</div>{% endfor %}
       {% for animal in family.offspring %}
         <div class="tree-node tree-child">{{ animal.id }}{% if animal.date != "" %}<small>{{ animal.date }}</small>{% endif %}{% if animal.sex != "" %}<small>{{ animal.sex }}</small>{% endif %}</div>
       {% endfor %}
