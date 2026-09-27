@@ -3,9 +3,9 @@ name: Copernicus
 status: with-us
 sex: Male
 hatch_date: November 6, 2022
-morph: Red Porthole
+morph: Pink Porthole
 parents: Tool × Shinnobu
 source: Rockstar Geckos
-summary: Individual profile and lineage record for Copernicus.
+summary: Pink porthole male with an especially large, full crest.
 ---
-More notes and photos can be added through the site editor.
+Copernicus is known for his very large, full crest and has offspring with Vendetta.
