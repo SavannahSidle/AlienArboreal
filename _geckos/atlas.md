@@ -1,8 +1,8 @@
 ---
 name: Atlas
-status: with-us
+status: placed
 sex: Male
 morph: Red Dalmatian with portholes
-summary: Individual profile and lineage record for Atlas.
+summary: Historical profile and lineage record for Atlas.
 ---
-More notes and photos can be added through the site editor.
+Atlas has been placed and remains part of the family-history record.
