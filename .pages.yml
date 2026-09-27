@@ -142,18 +142,6 @@ content:
                 max: 12
               unique: true
               rename: safe
-          - name: linked_offspring
-            label: Linked offspring profiles
-            type: object
-            list:
-              collapsible:
-                collapsed: true
-                summary: "{name}"
-            fields:
-              - name: name
-                label: Gecko name
-                type: string
-                required: true
           - name: offspring
             label: Offspring
             type: object
