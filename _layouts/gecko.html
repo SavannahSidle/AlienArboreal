@@ -12,4 +12,94 @@ layout: default
 {% if hero_photo == nil and page.photos and page.photos.size > 0 %}
   {% assign hero_photo = page.photos[0] %}
 {% endif %}
-<article class="animal-profile"><div class="container profile-grid"><div class="profile-media">{% if hero_photo %}<img src="{{ hero_photo | relative_url }}" alt="{{ page.name }}">{% else %}<div class="image-placeholder">Photograph coming soon</div>{% endif %}{% if page.photos and page.photos.size > 1 %}<div class="lineage-gallery" style="margin-top:.75rem">{% for photo in page.photos offset:1 %}<img src="{{ photo | relative_url }}" alt="{{ page.name }} photo {{ forloop.index | plus: 1 }}">{% endfor %}</div>{% elsif page.gallery and page.gallery.size > 0 %}<div class="lineage-gallery" style="margin-top:.75rem">{% for photo in page.gallery %}<img src="{{ photo | relative_url }}" alt="{{ page.name }} photo {{ forloop.index }}">{% endfor %}</div>{% endif %}</div><div class="profile-copy"><p class="eyebrow">AA ID · {{ page.animal_id | default: page.slug }}</p><h1>{{ page.name }}</h1>{% unless page.status == 'lineage' %}<p class="profile-status"><span class="status-dot"></span>{{ page.status | replace: '-', ' ' | capitalize }}</p>{% endunless %}{% if page.summary %}<p class="lede">{{ page.summary }}</p>{% endif %}<dl class="facts">{% if page.hatch_date %}<div><dt>Hatched</dt><dd>{{ page.hatch_date }}</dd></div>{% endif %}{% if page.sex %}<div><dt>Sex</dt><dd>{{ page.sex }}</dd></div>{% endif %}{% if page.morph %}<div><dt>Traits</dt><dd>{{ page.morph }}</dd></div>{% endif %}{% if page.weight %}<div><dt>Weight</dt><dd>{{ page.weight }}</dd></div>{% endif %}{% if page.parents %}<div><dt>Lineage</dt><dd>{{ page.parents }}</dd></div>{% endif %}{% if page.source %}<div><dt>Source</dt><dd>{{ page.source }}</dd></div>{% endif %}{% if page.status == 'available' and page.price %}<div><dt>Placement</dt><dd>{{ page.price }}</dd></div>{% endif %}</dl><div class="prose">{{ public_content }}</div>{% if page.status == 'available' %}<a class="btn btn-primary" href="{{ '/contact/' | relative_url }}">Ask about {{ page.name }}</a>{% endif %}</div></div></article>
+
+<style>
+.profile-family{margin-top:2rem;padding-top:1.25rem;border-top:1px solid var(--line)}
+.profile-family h2{font-size:1.15rem}
+.profile-tree{margin:.7rem 0;padding:.9rem;border:1px solid var(--line);border-radius:6px;background:var(--panel);overflow-x:auto}
+.profile-tree-row{display:flex;justify-content:center;align-items:center;gap:.5rem;min-width:320px}
+.profile-tree-node{min-width:110px;max-width:180px;text-align:center;padding:.48rem .65rem;border:1px solid var(--line);border-radius:5px;background:rgba(0,0,0,.12);font-size:.8rem;font-weight:700}
+.profile-tree-node.current{border-color:var(--acid)}
+.profile-tree-node a{color:inherit}
+.profile-tree-node small{display:block;margin-top:.12rem;color:var(--muted);font:400 .62rem "Space Mono",monospace}
+.profile-tree-cross{color:var(--acid);font-weight:700}
+.profile-tree-stem{width:1px;height:16px;background:var(--moss);margin:0 auto}
+.profile-pairing{margin:.8rem 0 0}
+.profile-pairing-title{font-size:.84rem;font-weight:700;margin-bottom:.35rem}
+.profile-children{display:flex;flex-wrap:wrap;gap:.4rem}
+</style>
+
+<article class="animal-profile">
+<div class="container profile-grid">
+  <div class="profile-media">
+    {% if hero_photo %}<img src="{{ hero_photo | relative_url }}" alt="{{ page.name }}">{% else %}<div class="image-placeholder">Photograph coming soon</div>{% endif %}
+    {% if page.photos and page.photos.size > 1 %}<div class="lineage-gallery" style="margin-top:.75rem">{% for photo in page.photos offset:1 %}<img src="{{ photo | relative_url }}" alt="{{ page.name }} photo {{ forloop.index | plus: 1 }}">{% endfor %}</div>{% elsif page.gallery and page.gallery.size > 0 %}<div class="lineage-gallery" style="margin-top:.75rem">{% for photo in page.gallery %}<img src="{{ photo | relative_url }}" alt="{{ page.name }} photo {{ forloop.index }}">{% endfor %}</div>{% endif %}
+  </div>
+  <div class="profile-copy">
+    <p class="eyebrow">AA ID · {{ page.animal_id | default: page.slug }}</p>
+    <h1>{{ page.name }}</h1>
+    {% if page.identifier %}<p class="lineage-note">Identifier: {{ page.identifier }}</p>{% endif %}
+    {% unless page.status == 'lineage' %}<p class="profile-status"><span class="status-dot"></span>{{ page.status | replace: '-', ' ' | capitalize }}{% if page.placement_note %} · {{ page.placement_note }}{% endif %}</p>{% endunless %}
+    {% if page.summary %}<p class="lede">{{ page.summary }}</p>{% endif %}
+    <dl class="facts">
+      {% if page.hatch_date %}<div><dt>Hatched</dt><dd>{{ page.hatch_date }}</dd></div>{% endif %}
+      {% if page.sex %}<div><dt>Sex</dt><dd>{{ page.sex }}</dd></div>{% endif %}
+      {% if page.morph %}<div><dt>Traits</dt><dd>{{ page.morph }}</dd></div>{% endif %}
+      {% if page.weight %}<div><dt>Weight</dt><dd>{{ page.weight }}</dd></div>{% endif %}
+      {% if page.parents %}<div><dt>Lineage</dt><dd>{{ page.parents }}</dd></div>{% endif %}
+      {% if page.source %}<div><dt>Source</dt><dd>{{ page.source }}</dd></div>{% endif %}
+      {% if page.status == 'available' and page.price %}<div><dt>Placement</dt><dd>{{ page.price }}</dd></div>{% endif %}
+    </dl>
+    <div class="prose">{{ public_content }}</div>
+    {% if page.status == 'available' %}<a class="btn btn-primary" href="{{ '/contact/' | relative_url }}">Ask about {{ page.name }}</a>{% endif %}
+
+    {% assign has_pairings = false %}
+    {% for family in site.data.lineage.pairings %}
+      {% assign fp = family.pairing | split: ' × ' %}
+      {% if fp[0] == page.name or fp[1] == page.name %}{% assign has_pairings = true %}{% endif %}
+    {% endfor %}
+    {% if page.parents or has_pairings %}
+    <section class="profile-family">
+      <h2>Family tree</h2>
+
+      {% if page.parents %}
+      {% assign pp = page.parents | split: ' × ' %}
+      {% assign parent1 = site.geckos | where: "name", pp[0] | first %}
+      {% assign parent2 = site.geckos | where: "name", pp[1] | first %}
+      <div class="profile-tree">
+        <div class="profile-tree-row">
+          <div class="profile-tree-node">{% if parent1 %}<a href="{{ parent1.url | relative_url }}">{{ pp[0] }}</a>{% else %}{{ pp[0] }}{% endif %}</div>
+          <div class="profile-tree-cross">×</div>
+          <div class="profile-tree-node">{% if parent2 %}<a href="{{ parent2.url | relative_url }}">{{ pp[1] }}</a>{% else %}{{ pp[1] }}{% endif %}</div>
+        </div>
+        <div class="profile-tree-stem"></div>
+        <div class="profile-tree-row"><div class="profile-tree-node current">{{ page.name }}</div></div>
+      </div>
+      {% endif %}
+
+      {% for family in site.data.lineage.pairings %}
+        {% assign fp = family.pairing | split: ' × ' %}
+        {% if fp[0] == page.name or fp[1] == page.name %}
+          {% if fp[0] == page.name %}{% assign partner_name = fp[1] %}{% else %}{% assign partner_name = fp[0] %}{% endif %}
+          {% assign partner = site.geckos | where: "name", partner_name | first %}
+          <div class="profile-pairing">
+            <div class="profile-pairing-title">{{ page.name }} × {% if partner %}<a href="{{ partner.url | relative_url }}">{{ partner_name }}</a>{% else %}{{ partner_name }}{% endif %}</div>
+            <div class="profile-children">
+              {% if family.linked_offspring %}
+                {% for linked in family.linked_offspring %}
+                  {% assign linked_profile = site.geckos | where: "name", linked.name | first %}
+                  <div class="profile-tree-node">{% if linked_profile %}<a href="{{ linked_profile.url | relative_url }}">{{ linked.name }}</a>{% else %}{{ linked.name }}{% endif %}<small>profile</small></div>
+                {% endfor %}
+              {% endif %}
+              {% for animal in family.offspring %}
+                <div class="profile-tree-node">{{ animal.id }}{% if animal.date != "" %}<small>{{ animal.date }}</small>{% endif %}</div>
+              {% endfor %}
+            </div>
+          </div>
+        {% endif %}
+      {% endfor %}
+    </section>
+    {% endif %}
+  </div>
+</div>
+</article>
