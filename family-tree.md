@@ -19,7 +19,7 @@ permalink: /family-tree/
 .tree-meta{display:block;margin-top:.18rem;color:var(--muted);font:400 .62rem "Space Mono",monospace}
 .pair-mark{align-self:center;color:var(--acid);font:700 1.25rem "Space Mono",monospace}
 .family-stem{width:2px;height:22px;margin:0 auto;background:var(--moss)}
-.family-branch{width:min(72%,420px);height:14px;margin:0 auto;border-top:2px solid var(--moss);border-left:2px solid var(--moss);border-right:2px solid var(--moss);border-radius:7px 7px 0 0}
+.family-rail{width:min(72%,420px);height:14px;margin:0 auto;border-top:2px solid var(--moss);border-left:2px solid var(--moss);border-right:2px solid var(--moss);border-radius:7px 7px 0 0}
 .tree-generation{display:flex;justify-content:center;align-items:flex-start;gap:1.2rem;margin:0;padding:0;list-style:none}
 .tree-generation>li{position:relative;display:flex;flex-direction:column;align-items:center;min-width:150px;padding:0 .15rem}
 .tree-generation>li:before{position:absolute;top:-14px;left:50%;height:14px;border-left:2px solid var(--moss);content:""}
@@ -84,7 +84,7 @@ permalink: /family-tree/
     group.names.forEach((name,index)=>{if(index){const mark=document.createElement('span');mark.className='pair-mark';mark.textContent='×';parents.appendChild(mark)}parents.appendChild(makeAnimal(byName.get(normalize(name)),name))});
     unit.appendChild(parents);
     const stem=document.createElement('div');stem.className='family-stem';unit.appendChild(stem);
-    const rail=document.createElement('div');rail.className='family-branch';unit.appendChild(rail);
+    const rail=document.createElement('div');rail.className='family-rail';unit.appendChild(rail);
     const generation=document.createElement('ul');generation.className='tree-generation';
     group.children.forEach(child=>{
       const li=document.createElement('li');li.appendChild(makeAnimal(child,child.name));
