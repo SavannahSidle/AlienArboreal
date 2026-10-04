@@ -121,5 +121,39 @@ permalink: /lineage/
     {% endunless %}
   {% endif %}
 {% endfor %}
+
+{% for history in site.data.lineage.lineage_records %}
+<details class="lineage-family">
+  <summary>
+    <span class="lineage-pair">{{ history.parents | escape }}</span>
+    <span class="lineage-preview">{% if history.traits %}{{ history.traits | escape }}{% endif %}{% if history.hatch_date %}{% if history.traits %} · {% endif %}{{ history.hatch_date | escape }}{% endif %}</span>
+  </summary>
+  <div class="lineage-family-body">
+    <div class="family-tree">
+      <div class="tree-parents">
+      {% assign history_parents = history.parents | split: '×' %}
+      {% for parent_name in history_parents %}
+        <div class="tree-node missing">
+          <div class="tree-photo tree-photo-placeholder" aria-label="Photo placeholder">Photo placeholder</div>
+          {{ parent_name | strip | escape }}
+        </div>
+        {% unless forloop.last %}<div class="tree-cross">×</div>{% endunless %}
+      {% endfor %}
+      </div>
+      <div class="tree-stem"></div><div class="tree-branch"></div>
+      <div class="tree-children">
+        <div class="tree-node">
+          <div class="tree-photo tree-photo-placeholder" aria-label="Photo placeholder">Photo placeholder</div>
+          Offspring
+          {% if history.traits %}<small>{{ history.traits | escape }}</small>{% endif %}
+          {% if history.hatch_date %}<small>{{ history.hatch_date | escape }}</small>{% endif %}
+          {% if history.source %}<small>{{ history.source | escape }}</small>{% endif %}
+        </div>
+      </div>
+    </div>
+    {% if history.notes %}<p>{{ history.notes | escape }}</p>{% endif %}
+  </div>
+</details>
+{% endfor %}
 </div>
 
