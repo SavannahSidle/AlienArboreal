@@ -10,7 +10,7 @@ permalink: /lineage/
 .lineage-family{margin:0;padding:0;border:0;border-bottom:1px solid var(--line);background:transparent}
 .lineage-family summary{display:grid;grid-template-columns:minmax(180px,1fr) 2fr auto;gap:1rem;align-items:center;padding:.7rem .2rem;cursor:pointer;list-style:none}
 .lineage-family summary::-webkit-details-marker{display:none}
-.lineage-family summary:after{content:"+";color:var(--acid);font:400 1rem "Space Mono",monospace}
+.lineage-family summary:after{content:"+";color:var(--acid);font:700 1.8rem/1 "Space Mono",monospace;min-width:1.6rem;text-align:center}
 .lineage-family[open] summary:after{content:"−"}
 .lineage-pair{font-weight:700;color:var(--ink)}
 .lineage-pair a,.tree-node a{color:inherit;text-decoration-color:var(--moss)}
