@@ -10,7 +10,7 @@ permalink: /our-geckos/
 <div class="grid grid-3" style="margin:1.5rem 0 2.5rem">
   <a class="card" href="#individuals"><div class="card-body"><h2 class="card-title">Individuals</h2><p class="card-summary">Profiles for the geckos themselves.</p></div></a>
   <a class="card" href="{{ '/pairings/' | relative_url }}"><div class="card-body"><h2 class="card-title">Pairings</h2><p class="card-summary">Past, present, and planned pairings.</p></div></a>
-  <a class="card" href="{{ '/lineage/' | relative_url }}"><div class="card-body"><h2 class="card-title">Family Histories</h2><p class="card-summary">Parentage and offspring across generations.</p></div></a>
+  <a class="card" href="{{ '/lineage/' | relative_url }}"><div class="card-body"><h2 class="card-title">Lineage</h2><p class="card-summary">Family histories, parentage, offspring, and the visual Family Tree.</p></div></a>
 </div>
 
 <style>
