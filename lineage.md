@@ -11,7 +11,7 @@ permalink: /lineage/
 .lineage-family{margin:0;padding:0;border:0;border-bottom:1px solid var(--line);background:transparent}
 .lineage-family summary{display:grid;grid-template-columns:minmax(180px,1fr) 2fr auto;gap:1rem;align-items:center;padding:.7rem .2rem;cursor:pointer;list-style:none}
 .lineage-family summary::-webkit-details-marker{display:none}
-.lineage-family summary:after{content:"+";color:#10140f;background:var(--acid);font:700 2.25rem/1 "Space Mono",monospace;width:3rem;height:3rem;min-width:3rem;display:grid;place-items:center;border-radius:5px;text-align:center;transition:transform .15s ease,background .15s ease}.lineage-family summary:hover:after{background:#d8ff45;transform:scale(1.04)}.lineage-family summary:focus-visible{outline:3px solid var(--acid);outline-offset:4px;border-radius:4px}
+.lineage-family summary:after{content:"+";color:#10140f;background:var(--acid);font:700 3.25rem/1 "Space Mono",monospace;width:3.75rem;height:3.75rem;min-width:3.75rem;display:grid;place-items:center;border-radius:5px;text-align:center;transition:transform .15s ease,background .15s ease}.lineage-family summary:hover:after{background:#d8ff45;transform:scale(1.04)}.lineage-family summary:focus-visible{outline:3px solid var(--acid);outline-offset:4px;border-radius:4px}
 .lineage-family[open] summary:after{content:"−"}
 .lineage-pair{font-weight:700;color:var(--ink)}
 .lineage-pair a,.tree-node a{color:inherit;text-decoration-color:var(--moss)}
