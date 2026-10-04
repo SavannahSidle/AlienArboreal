@@ -64,8 +64,6 @@ permalink: /our-geckos/
 </div>
 {% endif %}
 
-{% assign current_unknown = current_geckos | where_exp: "g", "g.sex != 'Male' and g.sex != 'Female'" %}
-{% if current_unknown.size > 0 %}
 <h3 class="sex-heading">Sex not recorded</h3>
 <div class="gecko-sex-grid">
 {% for gecko in current_geckos %}
@@ -78,7 +76,7 @@ permalink: /our-geckos/
 {% endunless %}
 {% endfor %}
 </div>
-{% endif %}
+
 
 ## Placed
 
