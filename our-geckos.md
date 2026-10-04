@@ -68,10 +68,14 @@ permalink: /our-geckos/
 {% if current_unknown.size > 0 %}
 <h3 class="sex-heading">Sex not recorded</h3>
 <div class="gecko-sex-grid">
-{% for gecko in current_unknown %}
+{% for gecko in current_geckos %}
+{% unless gecko.sex == "Male" %}
+{% unless gecko.sex == "Female" %}
 {% assign card_photo = gecko.image %}
 {% if card_photo == nil and gecko.photos and gecko.photos.size > 0 %}{% assign card_photo = gecko.photos[0] %}{% endif %}
 <a href="{{ gecko.url | relative_url }}" class="gecko-mini"><div class="gecko-mini-thumb">{% if card_photo %}<img src="{{ card_photo | relative_url }}" alt="{{ gecko.name }}" loading="lazy">{% else %}<div class="gecko-mini-placeholder">photo<br>coming</div>{% endif %}</div><div class="gecko-mini-copy"><strong>{{ gecko.name }}</strong>{% if gecko.morph %}<small>{{ gecko.morph }}</small>{% endif %}</div></a>
+{% endunless %}
+{% endunless %}
 {% endfor %}
 </div>
 {% endif %}
