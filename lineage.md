@@ -35,6 +35,14 @@ permalink: /lineage/
 {% assign geckos = site.geckos | sort: "name" %}
 {% assign seen_pairings = "|" %}
 
+<section class="section-block" style="margin-bottom:1.75rem">
+  <p class="eyebrow">Visual lineage</p>
+  <h2>Family Tree</h2>
+  <p>Follow generations visually from parents to offspring.</p>
+  <a class="btn btn-primary" href="{{ '/family-tree/' | relative_url }}">Open Family Tree</a>
+</section>
+
+<h2>Family Histories</h2>
 <div class="lineage-list">
 {% for seed in geckos %}
   {% if seed.parents %}
@@ -115,4 +123,3 @@ permalink: /lineage/
 {% endfor %}
 </div>
 
-<p style="margin-top:1.5rem"><a class="btn btn-secondary" href="{{ '/family-tree/' | relative_url }}">View full family tree</a></p>
