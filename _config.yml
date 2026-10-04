@@ -1,3 +1,6 @@
+- name: Metrics embed
+  uses: lowlighter/metrics@v3.34
+
 title: Alien Arboreal
 description: "Crested geckos and select species raised with careful husbandry, biological curiosity, and respect for life. Based in Ottawa, Ontario."
 url: "https://alienarboreal.com"
