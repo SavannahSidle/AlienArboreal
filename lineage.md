@@ -7,6 +7,7 @@ permalink: /lineage/
 ---
 <style>
 .lineage-list{border-top:1px solid var(--line);margin-top:.5rem}
+.prose a.btn-primary{color:var(--dark)}
 .lineage-family{margin:0;padding:0;border:0;border-bottom:1px solid var(--line);background:transparent}
 .lineage-family summary{display:grid;grid-template-columns:minmax(180px,1fr) 2fr auto;gap:1rem;align-items:center;padding:.7rem .2rem;cursor:pointer;list-style:none}
 .lineage-family summary::-webkit-details-marker{display:none}
