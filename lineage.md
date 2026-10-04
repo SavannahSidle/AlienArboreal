@@ -122,6 +122,58 @@ permalink: /lineage/
   {% endif %}
 {% endfor %}
 
+
+{% for pairing in site.data.lineage.pairings %}
+  {% assign data_parts = pairing.pairing | replace: ' X ', '×' | replace: ' x ', '×' | split: '×' %}
+  {% capture data_key_raw %}{% for part in data_parts %}{{ part | strip | downcase }}{% unless forloop.last %}|||{% endunless %}{% endfor %}{% endcapture %}
+  {% assign data_key_parts = data_key_raw | split: '|||' | sort %}
+  {% capture data_key %}|{% for part in data_key_parts %}{{ part }}{% unless forloop.last %}|||{% endunless %}{% endfor %}|{% endcapture %}
+  {% unless seen_pairings contains data_key %}
+    {% capture seen_pairings %}{{ seen_pairings }}{{ data_key }}{% endcapture %}
+    <details class="lineage-family">
+      <summary>
+        <span class="lineage-pair">{{ pairing.pairing | escape }}</span>
+        <span class="lineage-preview">{% for offspring in pairing.offspring %}{% unless forloop.first %} · {% endunless %}{{ offspring.id | escape }}{% endfor %}</span>
+      </summary>
+      <div class="lineage-family-body">
+        <div class="family-tree">
+          <div class="tree-parents">
+          {% for parent_name in data_parts %}
+            {% assign clean_parent = parent_name | strip %}
+            {% assign parent_norm = clean_parent | downcase %}
+            {% assign matched_parent = nil %}
+            {% for candidate in geckos %}
+              {% assign candidate_norm = candidate.name | strip | downcase %}
+              {% if candidate_norm == parent_norm %}{% assign matched_parent = candidate %}{% break %}{% endif %}
+            {% endfor %}
+            {% assign parent_photo = matched_parent.image %}
+            {% if parent_photo == nil and matched_parent.photos and matched_parent.photos.size > 0 %}{% assign parent_photo = matched_parent.photos[0] %}{% endif %}
+            <div class="tree-node{% unless matched_parent %} missing{% endunless %}">
+              <div class="tree-photo">{% if parent_photo %}<img src="{{ parent_photo | relative_url }}" alt="" loading="lazy">{% else %}Photo placeholder{% endif %}</div>
+              {% if matched_parent %}<a href="{{ matched_parent.url | relative_url }}">{{ matched_parent.name }}</a>{% else %}{{ clean_parent | escape }}{% endif %}
+            </div>
+            {% unless forloop.last %}<div class="tree-cross">×</div>{% endunless %}
+          {% endfor %}
+          </div>
+          <div class="tree-stem"></div><div class="tree-branch"></div>
+          <div class="tree-children">
+          {% for offspring in pairing.offspring %}
+            <div class="tree-node">
+              <div class="tree-photo">{% assign offspring_photo = offspring.photos[0] %}{% if offspring_photo %}<img src="{{ offspring_photo | relative_url }}" alt="" loading="lazy">{% else %}Photo placeholder{% endif %}</div>
+              {{ offspring.id | escape }}
+              {% if offspring.date %}<small>{{ offspring.date | escape }}</small>{% endif %}
+              {% if offspring.sex %}<small>{{ offspring.sex | escape }}</small>{% endif %}
+              {% if offspring.notes %}<small>{{ offspring.notes | escape }}</small>{% endif %}
+            </div>
+          {% endfor %}
+          </div>
+        </div>
+        {% if pairing.notes %}<p>{{ pairing.notes | escape }}</p>{% endif %}
+      </div>
+    </details>
+  {% endunless %}
+{% endfor %}
+
 {% for history in site.data.lineage.lineage_records %}
 <details class="lineage-family">
   <summary>
