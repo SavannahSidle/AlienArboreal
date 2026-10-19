@@ -1,8 +1,8 @@
 ---
 name: Nova
-status: available
+status: not-available
 sex: Female
 parents: Shinx × Rocket
-summary: Shinx × Rocket offspring, currently available for placement.
+summary: Shinx × Rocket offspring, not currently listed for placement.
 ---
 Nova is part of the Shinx × Rocket family line.
