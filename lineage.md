@@ -96,7 +96,7 @@ permalink: /lineage/
                 {% assign candidate_norm = candidate.name | strip | replace: '  ', ' ' | replace: '  ', ' ' | downcase %}
                 {% if candidate_norm == parent_norm %}{% assign matched_parent = candidate %}{% break %}{% endif %}
               {% endfor %}
-              <div class="tree-node{% unless matched_parent %} missing{% endunless %}">{% assign parent_photo = matched_parent.image %}{% if parent_photo == nil and matched_parent.photos and matched_parent.photos.size > 0 %}{% assign parent_photo = matched_parent.photos[0] %}{% endif %}<div class="tree-photo">{% if parent_photo %}<img src="{{ parent_photo | relative_url }}" alt="" loading="lazy">{% else %}Photo placeholder{% endif %}</div>{% if matched_parent %}<a href="{{ matched_parent.url | relative_url }}">{{ matched_parent.name }}</a>{% else %}{{ clean_parent }}{% endif %}</div>
+              <div class="tree-node{% unless matched_parent %} missing{% endunless %}">{% assign parent_photo = matched_parent.image %}{% if parent_photo == nil and matched_parent.photos and matched_parent.photos.size > 0 %}{% assign parent_photo = matched_parent.photos[0] %}{% endif %}<div class="tree-photo">{% if parent_photo %}<img src="{{ parent_photo | relative_url }}" alt="" loading="lazy">{% else %}Photos coming soon{% endif %}</div>{% if matched_parent %}<a href="{{ matched_parent.url | relative_url }}">{{ matched_parent.name }}</a>{% else %}{{ clean_parent }}{% endif %}</div>
               {% unless forloop.last %}<div class="tree-cross">×</div>{% endunless %}
             {% endfor %}
             </div>
@@ -111,7 +111,7 @@ permalink: /lineage/
                 {% assign child_key_parts = child_key_raw | split: '|||' | sort %}
                 {% capture child_key %}|{% for part in child_key_parts %}{{ part }}{% unless forloop.last %}|||{% endunless %}{% endfor %}|{% endcapture %}
                 {% if child_key == seed_key %}
-                  <div class="tree-node">{% assign child_photo = child.image %}{% if child_photo == nil and child.photos and child.photos.size > 0 %}{% assign child_photo = child.photos[0] %}{% endif %}<div class="tree-photo">{% if child_photo %}<img src="{{ child_photo | relative_url }}" alt="" loading="lazy">{% else %}Photo placeholder{% endif %}</div><a href="{{ child.url | relative_url }}">{{ child.name }}</a>{% if child.hatch_date %}<small>{{ child.hatch_date }}</small>{% endif %}{% if child.sex %}<small>{{ child.sex }}</small>{% endif %}</div>
+                  <div class="tree-node">{% assign child_photo = child.image %}{% if child_photo == nil and child.photos and child.photos.size > 0 %}{% assign child_photo = child.photos[0] %}{% endif %}<div class="tree-photo">{% if child_photo %}<img src="{{ child_photo | relative_url }}" alt="" loading="lazy">{% else %}Photos coming soon{% endif %}</div><a href="{{ child.url | relative_url }}">{{ child.name }}</a>{% if child.hatch_date %}<small>{{ child.hatch_date }}</small>{% endif %}{% if child.sex %}<small>{{ child.sex }}</small>{% endif %}</div>
                 {% endif %}
               {% endif %}
             {% endfor %}
@@ -150,7 +150,7 @@ permalink: /lineage/
             {% assign parent_photo = matched_parent.image %}
             {% if parent_photo == nil and matched_parent.photos and matched_parent.photos.size > 0 %}{% assign parent_photo = matched_parent.photos[0] %}{% endif %}
             <div class="tree-node{% unless matched_parent %} missing{% endunless %}">
-              <div class="tree-photo">{% if parent_photo %}<img src="{{ parent_photo | relative_url }}" alt="" loading="lazy">{% else %}Photo placeholder{% endif %}</div>
+              <div class="tree-photo">{% if parent_photo %}<img src="{{ parent_photo | relative_url }}" alt="" loading="lazy">{% else %}Photos coming soon{% endif %}</div>
               {% if matched_parent %}<a href="{{ matched_parent.url | relative_url }}">{{ matched_parent.name }}</a>{% else %}{{ clean_parent | escape }}{% endif %}
             </div>
             {% unless forloop.last %}<div class="tree-cross">×</div>{% endunless %}
@@ -160,7 +160,7 @@ permalink: /lineage/
           <div class="tree-children">
           {% for offspring in pairing.offspring %}
             <div class="tree-node">
-              <div class="tree-photo">{% assign offspring_photo = offspring.photos[0] %}{% if offspring_photo %}<img src="{{ offspring_photo | relative_url }}" alt="" loading="lazy">{% else %}Photo placeholder{% endif %}</div>
+              <div class="tree-photo">{% assign offspring_photo = offspring.photos[0] %}{% if offspring_photo %}<img src="{{ offspring_photo | relative_url }}" alt="" loading="lazy">{% else %}Photos coming soon{% endif %}</div>
               {{ offspring.id | escape }}
               {% if offspring.date %}<small>{{ offspring.date | escape }}</small>{% endif %}
               {% if offspring.sex %}<small>{{ offspring.sex | escape }}</small>{% endif %}
@@ -187,7 +187,7 @@ permalink: /lineage/
       {% assign history_parents = history.parents | split: '×' %}
       {% for parent_name in history_parents %}
         <div class="tree-node missing">
-          <div class="tree-photo tree-photo-placeholder" aria-label="Photo placeholder">Photo placeholder</div>
+          <div class="tree-photo tree-photo-placeholder" aria-label="Photos coming soon">Photos coming soon</div>
           {{ parent_name | strip | escape }}
         </div>
         {% unless forloop.last %}<div class="tree-cross">×</div>{% endunless %}
@@ -196,7 +196,7 @@ permalink: /lineage/
       <div class="tree-stem"></div><div class="tree-branch"></div>
       <div class="tree-children">
         <div class="tree-node">
-          <div class="tree-photo tree-photo-placeholder" aria-label="Photo placeholder">Photo placeholder</div>
+          <div class="tree-photo tree-photo-placeholder" aria-label="Photos coming soon">Photos coming soon</div>
           Offspring
           {% if history.traits %}<small>{{ history.traits | escape }}</small>{% endif %}
           {% if history.hatch_date %}<small>{{ history.hatch_date | escape }}</small>{% endif %}
