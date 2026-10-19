@@ -71,7 +71,7 @@ permalink: /family-tree/
     if(animal&&animal.url)el.href=animal.url;
     const photo=document.createElement('div');photo.className='tree-photo';
     if(animal&&animal.photo){const img=document.createElement('img');img.src=animal.photo;img.alt='';img.loading='lazy';photo.appendChild(img)}
-    else photo.textContent='Photo placeholder';
+    else photo.textContent='Photos coming soon';
     el.appendChild(photo);
     const title=document.createElement('span');title.className='tree-name';title.textContent=animal?animal.name:name;el.appendChild(title);
     if(animal){[animal.sex,animal.hatch_date,animal.morph,animal.status==='placed'?'Placed':null].filter(Boolean).forEach(value=>{const meta=document.createElement('small');meta.className='tree-meta';meta.textContent=value;el.appendChild(meta)})}
