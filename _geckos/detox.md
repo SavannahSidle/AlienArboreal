@@ -7,5 +7,7 @@ morph: Super Dalmatian
 parents: Killer × Bullet
 source: Exquisite Geckos
 summary: Historical profile and lineage record for Detox.
+photos:
+  - /assets/images/lineage/detox.jpg
 ---
 Detox remains part of the lineage record after placement.

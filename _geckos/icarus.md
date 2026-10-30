@@ -7,5 +7,7 @@ morph: Super Dalmatian (red spot)
 parents: Blotch × Keshin Clone
 source: MP Cresties
 summary: MP Cresties male from Blotch × Keshin Clone.
+photos:
+  - /assets/images/lineage/icarus.jpg
 ---
 Icarus remains part of several family-history lines.

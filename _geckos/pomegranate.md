@@ -2,5 +2,8 @@
 name: Pomegranate
 status: lineage
 summary: Lineage profile for Pomegranate.
+photos:
+  - /assets/images/lineage/pomegranate-1.jpg
+  - /assets/images/lineage/pomegranate-2.jpg
 ---
-More notes and photos can be added through the site editor.
+Pomegranate is a red-and-white crested gecko in the family lineage.

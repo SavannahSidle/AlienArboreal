@@ -7,5 +7,7 @@ morph: Red Ink Spot Harlequin
 parents: Keshin Clone × unknown
 source: MP Cresties
 summary: MP Cresties male with Keshin Clone lineage; second parent still to confirm.
+photos:
+  - /assets/images/lineage/vida.jpg
 ---
 The second parent in Vida's recorded lineage still needs confirmation.
