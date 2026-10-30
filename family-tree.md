@@ -5,6 +5,8 @@ eyebrow: Visual lineage
 description: Parent and offspring relationships across Alien Arboreal.
 permalink: /family-tree/
 ---
+<a class="btn" href="{{ '/lineage/' | relative_url }}">← Back to Lineage</a>
+
 <p>Follow parentage through generations. Every relationship is generated from the animal profiles’ <code>parents</code> field.</p>
 <style>
 .genealogy{display:grid;gap:2rem;margin-top:1.5rem}
