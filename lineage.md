@@ -5,6 +5,8 @@ eyebrow: Family histories
 description: Parentage and offspring across Alien Arboreal lines.
 permalink: /lineage/
 ---
+<a class="btn" href="{{ '/our-geckos/' | relative_url }}">← Back to Our Geckos</a>
+
 <style>
 .lineage-list{border-top:1px solid var(--line);margin-top:.5rem}
 .prose a.btn-primary{color:var(--dark)}
