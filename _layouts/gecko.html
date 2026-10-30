@@ -27,7 +27,7 @@ layout: default
 .profile-tree-stem{width:1px;height:16px;background:var(--moss);margin:0 auto}
 </style>
 
-<article class="animal-profile"><div class="container profile-grid">
+<article class="animal-profile"><div class="container"><a class="profile-back" href="{{ '/our-geckos/' | relative_url }}" onclick="if (history.length > 1) { history.back(); return false; }">← Back</a></div><div class="container profile-grid">
 <div class="profile-media">
 {% if hero_photo %}<img src="{{ hero_photo | relative_url }}" alt="{{ page.name }}">{% else %}<div class="image-placeholder">Photograph coming soon</div>{% endif %}
 {% if page.photos and page.photos.size > 1 %}<div class="lineage-gallery" style="margin-top:.75rem">{% for photo in page.photos offset:1 %}<img src="{{ photo | relative_url }}" alt="{{ page.name }} photo {{ forloop.index | plus: 1 }}">{% endfor %}</div>{% endif %}
