@@ -38,7 +38,7 @@ content:
       - name: name
         label: Name
         type: string
-        required: true
+        description: "Optional. If blank, the Animal ID (Code) is displayed instead."
       - name: identifier
         label: Identifier
         type: string
