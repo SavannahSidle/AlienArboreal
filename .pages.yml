@@ -59,6 +59,8 @@ content:
               label: Available
             - name: placed
               label: Placed
+            - name: unconfirmed
+              label: Status to confirm
             - name: lineage
               label: Lineage record
       - name: life_stage
