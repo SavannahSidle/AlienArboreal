@@ -52,6 +52,32 @@ content:
             max: 10
           rename: safe
         description: "Upload up to 10 photos per gecko. Add more than one image here; the first is the main profile photo."
+      - name: photo_shape
+        label: Main photo frame shape
+        type: select
+        options:
+          values:
+            - name: natural
+              label: Original proportions (no crop)
+            - name: square
+              label: Square
+            - name: landscape
+              label: Horizontal rectangle
+            - name: portrait
+              label: Vertical rectangle
+            - name: circle
+              label: Circle
+        description: "Choose the display frame for the main photo. Original proportions preserves the entire image. Other shapes can crop the visible edges."
+      - name: photo_fit
+        label: Main photo sizing
+        type: select
+        options:
+          values:
+            - name: contain
+              label: Fit entire photo (no crop)
+            - name: cover
+              label: Fill frame (crop edges)
+        description: "Fit shows the whole gecko; Fill crops edges to match your chosen shape."
       - name: status
         label: Status
         type: select
