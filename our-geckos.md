@@ -45,7 +45,7 @@ permalink: /our-geckos/
 {% if card_photo == nil and gecko.photos and gecko.photos.size > 0 %}{% assign card_photo = gecko.photos[0] %}{% endif %}
 <a href="{{ gecko.url | relative_url }}" class="gecko-mini">
   <div class="gecko-mini-thumb">{% if card_photo %}<img src="{{ card_photo | relative_url }}" alt="{{ gecko.name | default: gecko.animal_id | default: gecko.slug }}" loading="lazy">{% else %}<div class="gecko-mini-placeholder">photo<br>coming</div>{% endif %}</div>
-  <div class="gecko-mini-copy"><strong>{{ gecko.name | default: gecko.animal_id | default: gecko.slug }}</strong>{% if gecko.identifier and gecko.identifier != gecko.name %}<small>{{ gecko.identifier }}</small>{% endif %}{% if gecko.morph %}<small>{{ gecko.morph }}</small>{% endif %}{% if gecko.status == "available" %}<small class="available">Available{% if gecko.placement_note %} · {{ gecko.placement_note }}{% endif %}</small>{% endif %}</div>
+  <div class="gecko-mini-copy"><strong>{{ gecko.name | default: gecko.animal_id | default: gecko.slug }}</strong>{% if gecko.identifier and gecko.identifier != gecko.name %}<small>{{ gecko.identifier }}</small>{% endif %}{% if gecko.life_stage %}<small>{{ gecko.life_stage | capitalize }}</small>{% endif %}{% if gecko.future_breeder %}<small>Future breeder</small>{% endif %}{% if gecko.morph %}<small>{{ gecko.morph }}</small>{% endif %}{% if gecko.status == "available" %}<small class="available">Available{% if gecko.placement_note %} · {{ gecko.placement_note }}{% endif %}</small>{% endif %}</div>
 </a>
 {% endfor %}
 </div>
@@ -59,7 +59,7 @@ permalink: /our-geckos/
 {% if card_photo == nil and gecko.photos and gecko.photos.size > 0 %}{% assign card_photo = gecko.photos[0] %}{% endif %}
 <a href="{{ gecko.url | relative_url }}" class="gecko-mini">
   <div class="gecko-mini-thumb">{% if card_photo %}<img src="{{ card_photo | relative_url }}" alt="{{ gecko.name | default: gecko.animal_id | default: gecko.slug }}" loading="lazy">{% else %}<div class="gecko-mini-placeholder">photo<br>coming</div>{% endif %}</div>
-  <div class="gecko-mini-copy"><strong>{{ gecko.name | default: gecko.animal_id | default: gecko.slug }}</strong>{% if gecko.identifier and gecko.identifier != gecko.name %}<small>{{ gecko.identifier }}</small>{% endif %}{% if gecko.morph %}<small>{{ gecko.morph }}</small>{% endif %}{% if gecko.status == "available" %}<small class="available">Available{% if gecko.placement_note %} · {{ gecko.placement_note }}{% endif %}</small>{% endif %}</div>
+  <div class="gecko-mini-copy"><strong>{{ gecko.name | default: gecko.animal_id | default: gecko.slug }}</strong>{% if gecko.identifier and gecko.identifier != gecko.name %}<small>{{ gecko.identifier }}</small>{% endif %}{% if gecko.life_stage %}<small>{{ gecko.life_stage | capitalize }}</small>{% endif %}{% if gecko.future_breeder %}<small>Future breeder</small>{% endif %}{% if gecko.morph %}<small>{{ gecko.morph }}</small>{% endif %}{% if gecko.status == "available" %}<small class="available">Available{% if gecko.placement_note %} · {{ gecko.placement_note }}{% endif %}</small>{% endif %}</div>
 </a>
 {% endfor %}
 </div>
@@ -72,7 +72,7 @@ permalink: /our-geckos/
 {% unless gecko.sex == "Female" %}
 {% assign card_photo = gecko.image %}
 {% if card_photo == nil and gecko.photos and gecko.photos.size > 0 %}{% assign card_photo = gecko.photos[0] %}{% endif %}
-<a href="{{ gecko.url | relative_url }}" class="gecko-mini"><div class="gecko-mini-thumb">{% if card_photo %}<img src="{{ card_photo | relative_url }}" alt="{{ gecko.name | default: gecko.animal_id | default: gecko.slug }}" loading="lazy">{% else %}<div class="gecko-mini-placeholder">photo<br>coming</div>{% endif %}</div><div class="gecko-mini-copy"><strong>{{ gecko.name | default: gecko.animal_id | default: gecko.slug }}</strong>{% if gecko.morph %}<small>{{ gecko.morph }}</small>{% endif %}</div></a>
+<a href="{{ gecko.url | relative_url }}" class="gecko-mini"><div class="gecko-mini-thumb">{% if card_photo %}<img src="{{ card_photo | relative_url }}" alt="{{ gecko.name | default: gecko.animal_id | default: gecko.slug }}" loading="lazy">{% else %}<div class="gecko-mini-placeholder">photo<br>coming</div>{% endif %}</div><div class="gecko-mini-copy"><strong>{{ gecko.name | default: gecko.animal_id | default: gecko.slug }}</strong>{% if gecko.life_stage %}<small>{{ gecko.life_stage | capitalize }}</small>{% endif %}{% if gecko.future_breeder %}<small>Future breeder</small>{% endif %}{% if gecko.morph %}<small>{{ gecko.morph }}</small>{% endif %}</div></a>
 {% endunless %}
 {% endunless %}
 {% endfor %}
@@ -91,7 +91,7 @@ permalink: /our-geckos/
 {% for gecko in placed_males %}
 {% assign card_photo = gecko.image %}
 {% if card_photo == nil and gecko.photos and gecko.photos.size > 0 %}{% assign card_photo = gecko.photos[0] %}{% endif %}
-<a href="{{ gecko.url | relative_url }}" class="gecko-mini"><div class="gecko-mini-thumb">{% if card_photo %}<img src="{{ card_photo | relative_url }}" alt="{{ gecko.name | default: gecko.animal_id | default: gecko.slug }}" loading="lazy">{% else %}<div class="gecko-mini-placeholder">photo<br>coming</div>{% endif %}</div><div class="gecko-mini-copy"><strong>{{ gecko.name | default: gecko.animal_id | default: gecko.slug }}</strong>{% if gecko.morph %}<small>{{ gecko.morph }}</small>{% endif %}</div></a>
+<a href="{{ gecko.url | relative_url }}" class="gecko-mini"><div class="gecko-mini-thumb">{% if card_photo %}<img src="{{ card_photo | relative_url }}" alt="{{ gecko.name | default: gecko.animal_id | default: gecko.slug }}" loading="lazy">{% else %}<div class="gecko-mini-placeholder">photo<br>coming</div>{% endif %}</div><div class="gecko-mini-copy"><strong>{{ gecko.name | default: gecko.animal_id | default: gecko.slug }}</strong>{% if gecko.life_stage %}<small>{{ gecko.life_stage | capitalize }}</small>{% endif %}{% if gecko.future_breeder %}<small>Future breeder</small>{% endif %}{% if gecko.morph %}<small>{{ gecko.morph }}</small>{% endif %}</div></a>
 {% endfor %}
 </div>
 {% endif %}
@@ -102,7 +102,7 @@ permalink: /our-geckos/
 {% for gecko in placed_females %}
 {% assign card_photo = gecko.image %}
 {% if card_photo == nil and gecko.photos and gecko.photos.size > 0 %}{% assign card_photo = gecko.photos[0] %}{% endif %}
-<a href="{{ gecko.url | relative_url }}" class="gecko-mini"><div class="gecko-mini-thumb">{% if card_photo %}<img src="{{ card_photo | relative_url }}" alt="{{ gecko.name | default: gecko.animal_id | default: gecko.slug }}" loading="lazy">{% else %}<div class="gecko-mini-placeholder">photo<br>coming</div>{% endif %}</div><div class="gecko-mini-copy"><strong>{{ gecko.name | default: gecko.animal_id | default: gecko.slug }}</strong>{% if gecko.morph %}<small>{{ gecko.morph }}</small>{% endif %}</div></a>
+<a href="{{ gecko.url | relative_url }}" class="gecko-mini"><div class="gecko-mini-thumb">{% if card_photo %}<img src="{{ card_photo | relative_url }}" alt="{{ gecko.name | default: gecko.animal_id | default: gecko.slug }}" loading="lazy">{% else %}<div class="gecko-mini-placeholder">photo<br>coming</div>{% endif %}</div><div class="gecko-mini-copy"><strong>{{ gecko.name | default: gecko.animal_id | default: gecko.slug }}</strong>{% if gecko.life_stage %}<small>{{ gecko.life_stage | capitalize }}</small>{% endif %}{% if gecko.future_breeder %}<small>Future breeder</small>{% endif %}{% if gecko.morph %}<small>{{ gecko.morph }}</small>{% endif %}</div></a>
 {% endfor %}
 </div>
 {% endif %}
@@ -114,7 +114,20 @@ permalink: /our-geckos/
 {% for gecko in placed_unspecified %}
 {% assign card_photo = gecko.image %}
 {% if card_photo == nil and gecko.photos and gecko.photos.size > 0 %}{% assign card_photo = gecko.photos[0] %}{% endif %}
-<a href="{{ gecko.url | relative_url }}" class="gecko-mini"><div class="gecko-mini-thumb">{% if card_photo %}<img src="{{ card_photo | relative_url }}" alt="{{ gecko.name | default: gecko.animal_id }}" loading="lazy">{% else %}<div class="gecko-mini-placeholder">Photo pending</div>{% endif %}</div><div class="gecko-mini-copy"><strong>{{ gecko.name | default: gecko.animal_id | default: gecko.slug }}</strong>{% if gecko.morph %}<small>{{ gecko.morph }}</small>{% endif %}</div></a>
+<a href="{{ gecko.url | relative_url }}" class="gecko-mini"><div class="gecko-mini-thumb">{% if card_photo %}<img src="{{ card_photo | relative_url }}" alt="{{ gecko.name | default: gecko.animal_id }}" loading="lazy">{% else %}<div class="gecko-mini-placeholder">Photo pending</div>{% endif %}</div><div class="gecko-mini-copy"><strong>{{ gecko.name | default: gecko.animal_id | default: gecko.slug }}</strong>{% if gecko.life_stage %}<small>{{ gecko.life_stage | capitalize }}</small>{% endif %}{% if gecko.future_breeder %}<small>Future breeder</small>{% endif %}{% if gecko.morph %}<small>{{ gecko.morph }}</small>{% endif %}</div></a>
+{% endfor %}
+</div>
+{% endif %}
+
+{% assign future_breeders = site.geckos | where: "future_breeder", true | sort: "name" %}
+{% if future_breeders.size > 0 %}
+<h2 id="breeding-plans">Breeding Plans</h2>
+<p>Individuals selected for future breeding. They also remain in their current inventory category.</p>
+<div class="gecko-sex-grid">
+{% for gecko in future_breeders %}
+{% assign card_photo = gecko.image %}
+{% if card_photo == nil and gecko.photos and gecko.photos.size > 0 %}{% assign card_photo = gecko.photos[0] %}{% endif %}
+<a href="{{ gecko.url | relative_url }}" class="gecko-mini"><div class="gecko-mini-thumb">{% if card_photo %}<img src="{{ card_photo | relative_url }}" alt="{{ gecko.name | default: gecko.animal_id }}" loading="lazy">{% else %}<div class="gecko-mini-placeholder">Photo pending</div>{% endif %}</div><div class="gecko-mini-copy"><strong>{{ gecko.name | default: gecko.animal_id | default: gecko.slug }}</strong>{% if gecko.life_stage %}<small>{{ gecko.life_stage | capitalize }}</small>{% endif %}</div></a>
 {% endfor %}
 </div>
 {% endif %}
