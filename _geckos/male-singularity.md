@@ -1,8 +1,8 @@
 ---
-name: Male Singularity
-identifier: Male Singularity
+name: Orbit
+identifier: Male Singularity (formerly)
 status: with-us
 sex: Male
-summary: Currently unnamed; individual profile and lineage record.
+summary: Orbit, formerly listed as Male Singularity.
 ---
-Paired with O4. A permanent name can be added when chosen.
+Orbit is paired with O4.
