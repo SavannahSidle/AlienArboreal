@@ -109,6 +109,18 @@ content:
           value: "{name}"
           label: "{name}"
         description: "Select an existing gecko record. Offspring are linked automatically in the family tree."
+      - name: sire_photo
+        label: Father photo (optional)
+        type: image
+        options:
+          media: lineage_images
+        description: "Optional photo of the father for this lineage. If empty, use the father's own profile photo."
+      - name: dam_photo
+        label: Mother photo (optional)
+        type: image
+        options:
+          media: lineage_images
+        description: "Optional photo of the mother for this lineage. If empty, use the mother's own profile photo."
       - name: parents
         label: Legacy parentage / external lineage
         type: string
