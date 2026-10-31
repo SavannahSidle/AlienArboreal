@@ -18,7 +18,7 @@ permalink: /our-geckos/
 .gecko-mini{display:flex;align-items:center;gap:.75rem;padding:.65rem;border:1px solid var(--line);border-radius:5px;background:var(--panel);text-decoration:none;color:var(--ink)}
 .gecko-mini:hover{border-color:var(--moss)}
 .gecko-mini-thumb{width:64px;height:64px;flex:0 0 64px;border-radius:4px;overflow:hidden;background:rgba(255,255,255,.03);border:1px solid var(--line)}
-.gecko-mini-thumb img{width:100%;height:100%;object-fit:cover}
+.gecko-mini-thumb img{width:100%;height:100%;object-fit:contain}
 .gecko-mini-placeholder{width:100%;height:100%;display:grid;place-items:center;color:var(--muted);font:400 .6rem "Space Mono",monospace;text-align:center}
 .gecko-mini-copy{min-width:0}
 .gecko-mini-copy strong{display:block}
