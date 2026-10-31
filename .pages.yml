@@ -99,7 +99,7 @@ content:
           search: "name,animal_id"
           value: "{name}"
           label: "{name}"
-        description: "Select an existing gecko record. Create missing parents under Geckos first."
+        description: "Select an existing father, or expand Create new father below."
       - name: dam
         label: Dam (mother)
         type: reference
@@ -108,7 +108,51 @@ content:
           search: "name,animal_id"
           value: "{name}"
           label: "{name}"
-        description: "Select an existing gecko record. Offspring are linked automatically in the family tree."
+        description: "Select an existing mother, or expand Create new mother below."
+      - name: new_sire
+        label: Create new father (expand here)
+        type: object
+        fields:
+          - name: name
+            label: Father's name
+            type: string
+            description: "Leave blank unless creating a new father profile."
+          - name: photo
+            label: Father's photo
+            type: image
+            options:
+              media: lineage_images
+          - name: morph
+            label: Traits / morph
+            type: string
+          - name: source
+            label: Source / breeder
+            type: string
+          - name: parents
+            label: Father's own parentage (optional)
+            type: string
+      - name: new_dam
+        label: Create new mother (expand here)
+        type: object
+        fields:
+          - name: name
+            label: Mother's name
+            type: string
+            description: "Leave blank unless creating a new mother profile."
+          - name: photo
+            label: Mother's photo
+            type: image
+            options:
+              media: lineage_images
+          - name: morph
+            label: Traits / morph
+            type: string
+          - name: source
+            label: Source / breeder
+            type: string
+          - name: parents
+            label: Mother's own parentage (optional)
+            type: string
       - name: sire_photo
         label: Father photo (optional)
         type: image
