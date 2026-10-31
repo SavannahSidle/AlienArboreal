@@ -92,43 +92,78 @@ content:
         label: Short description
         type: text
       - name: sire
-        label: Sire (father)
+        label: Sire (father) — existing profile
         type: reference
         options:
           collection: geckos
           search: "name,animal_id"
           value: "{name}"
           label: "{name}"
-        description: "Select an existing father, or expand Create new father below."
-      - name: dam
-        label: Dam (mother)
-        type: reference
-        options:
-          collection: geckos
-          search: "name,animal_id"
-          value: "{name}"
-          label: "{name}"
-        description: "Select an existing mother, or expand Create new mother below."
+        description: "Choose an existing father, or use NEW! Create sire immediately below."
       - name: new_sire
-        label: Create new father (expand here)
+        label: "NEW! Create sire (father) here"
         type: object
         fields:
           - name: name
-            label: Father's name
+            label: Sire name
             type: string
-            description: "Leave blank unless creating a new father profile."
           - name: photo
-            label: Father's photo
+            label: Sire photo
             type: image
             options:
               media: lineage_images
           - name: morph
-            label: Traits / morph
+            label: Sire traits / morph
             type: string
           - name: source
-            label: Source / breeder
+            label: Sire source / breeder
             type: string
           - name: parents
+            label: Sire's parents (optional)
+            type: string
+      - name: sire_photo
+        label: Sire photo override (existing father)
+        type: image
+        options:
+          media: lineage_images
+        description: "For an existing sire, optionally show this photo instead of his profile photo."
+      - name: dam
+        label: Dam (mother) — existing profile
+        type: reference
+        options:
+          collection: geckos
+          search: "name,animal_id"
+          value: "{name}"
+          label: "{name}"
+        description: "Choose an existing mother, or use NEW! Create dam immediately below."
+      - name: new_dam
+        label: "NEW! Create dam (mother) here"
+        type: object
+        fields:
+          - name: name
+            label: Dam name
+            type: string
+          - name: photo
+            label: Dam photo
+            type: image
+            options:
+              media: lineage_images
+          - name: morph
+            label: Dam traits / morph
+            type: string
+          - name: source
+            label: Dam source / breeder
+            type: string
+          - name: parents
+            label: Dam's parents (optional)
+            type: string
+      - name: dam_photo
+        label: Dam photo override (existing mother)
+        type: image
+        options:
+          media: lineage_images
+        description: "For an existing dam, optionally show this photo instead of her profile photo."
+      - name: parents
             label: Father's own parentage (optional)
             type: string
       - name: new_dam
