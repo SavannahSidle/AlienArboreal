@@ -16,7 +16,7 @@ permalink: /family-tree/
 .tree-animal{display:block;width:144px;padding:.55rem;text-align:center;border:1px solid var(--line);border-radius:5px;background:rgba(0,0,0,.12);color:var(--ink);text-decoration:none}
 .tree-animal:hover{border-color:var(--moss);color:var(--acid)}
 .tree-photo{width:100%;height:88px;margin-bottom:.45rem;display:grid;place-items:center;overflow:hidden;border:1px dashed var(--line);border-radius:3px;background:rgba(255,255,255,.025);color:var(--muted);font:400 .62rem "Space Mono",monospace;text-transform:uppercase;letter-spacing:.04em}
-.tree-photo img{display:block;width:100%;height:100%;object-fit:cover}
+.tree-photo img{display:block;width:100%;height:100%;object-fit:contain}
 .tree-name{display:block;font-weight:700}
 .tree-meta{display:block;margin-top:.18rem;color:var(--muted);font:400 .62rem "Space Mono",monospace}
 .pair-mark{align-self:center;color:var(--acid);font:700 1.25rem "Space Mono",monospace}
