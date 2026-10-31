@@ -29,12 +29,12 @@ layout: default
 
 <article class="animal-profile"><div class="container"><a class="profile-back" href="{{ '/our-geckos/' | relative_url }}" onclick="if (history.length > 1) { history.back(); return false; }">← Back</a></div><div class="container profile-grid">
 <div class="profile-media photo-shape-{{ page.photo_shape | default: 'natural' | escape }} photo-fit-{{ page.photo_fit | default: 'contain' | escape }}">
-{% if hero_photo %}<img src="{{ hero_photo | relative_url }}" alt="{{ page.name }}">{% else %}<div class="image-placeholder">Photograph coming soon</div>{% endif %}
-{% if page.photos and page.photos.size > 1 %}<div class="lineage-gallery" style="margin-top:.75rem">{% for photo in page.photos offset:1 %}<img src="{{ photo | relative_url }}" alt="{{ page.name }} photo {{ forloop.index | plus: 1 }}">{% endfor %}</div>{% endif %}
+{% if hero_photo %}<img src="{{ hero_photo | relative_url }}" alt="{{ page.name | default: page.animal_id | default: page.slug }}">{% else %}<div class="image-placeholder">Photograph coming soon</div>{% endif %}
+{% if page.photos and page.photos.size > 1 %}<div class="lineage-gallery" style="margin-top:.75rem">{% for photo in page.photos offset:1 %}<img src="{{ photo | relative_url }}" alt="{{ page.name | default: page.animal_id | default: page.slug }} photo {{ forloop.index | plus: 1 }}">{% endfor %}</div>{% endif %}
 </div>
 <div class="profile-copy">
 <p class="eyebrow">AA ID · {{ page.animal_id | default: page.slug }}</p>
-<h1>{{ page.name }}</h1>
+<h1>{{ page.name | default: page.animal_id | default: page.slug }}</h1>
 {% if page.identifier %}<p class="lineage-note">Identifier: {{ page.identifier }}</p>{% endif %}
 {% unless page.status == 'lineage' %}<p class="profile-status"><span class="status-dot"></span>{{ page.status | replace: '-', ' ' | capitalize }}{% if page.placement_note %} · {{ page.placement_note }}{% endif %}</p>{% endunless %}
 {% if page.summary %}<p class="lede">{{ page.summary }}</p>{% endif %}
@@ -48,7 +48,7 @@ layout: default
 {% if page.status == 'available' and page.price %}<div><dt>Placement</dt><dd>{{ page.price }}</dd></div>{% endif %}
 </dl>
 <div class="prose">{{ public_content }}</div>
-{% if page.status == 'available' %}<a class="btn btn-primary" href="{{ '/contact/' | relative_url }}">Ask about {{ page.name }}</a>{% endif %}
+{% if page.status == 'available' %}<a class="btn btn-primary" href="{{ '/contact/' | relative_url }}">Ask about {{ page.name | default: page.animal_id | default: page.slug }}</a>{% endif %}
 
 <section class="profile-family">
 <h2>Family tree</h2>
@@ -89,7 +89,7 @@ layout: default
 {% endif %}
 </div>
 <div class="profile-tree-stem"></div>
-<div class="profile-tree-row"><div class="profile-tree-node current">{{ page.name }}</div></div>
+<div class="profile-tree-row"><div class="profile-tree-node current">{{ page.name | default: page.animal_id | default: page.slug }}</div></div>
 {% endif %}
 {% assign has_offspring = false %}
 {% capture offspring_markup %}
