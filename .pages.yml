@@ -44,15 +44,14 @@ content:
         type: string
         description: "Working identifier or source label, such as Male Singularity or Female Sable."
       - name: photos
-        label: Photos
+        label: Gecko photos (up to 10)
         type: image
         options:
           media: gecko_images
           multiple:
-            max: 12
-          unique: true
+            max: 10
           rename: safe
-        description: "Add several photos here. The first photo becomes the main profile image."
+        description: "Upload up to 10 photos per gecko. Add more than one image here; the first is the main profile photo."
       - name: status
         label: Status
         type: select
