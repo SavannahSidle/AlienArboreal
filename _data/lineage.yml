@@ -125,8 +125,8 @@ pairings:
       - { id: "O1", date: "Apr 18, 2026", sex: "", notes: "", photos: [] }
       - { id: "O2", date: "Aug 15, 2026", sex: "", notes: "", photos: [] }
 
-  - pairing: "Male Singularity × O4"
-    notes: "Male Singularity still needs a name."
+  - pairing: "Orbit × O4"
+    notes: "Orbit is now named."
     photos: []
     offspring:
       - { id: "O1", date: "Aug 29, 2026", sex: "", notes: "", photos: [] }
@@ -166,7 +166,7 @@ adults:
   - { name: "Rocket", notes: "", photos: [] }
   - { name: "Icarus", notes: "", photos: [] }
   - { name: "Singularity", notes: "", photos: [] }
-  - { name: "Male Singularity", notes: "Unnamed.", photos: [] }
+  - { name: "Orbit", notes: "Formerly Male Singularity.", photos: [] }
   - { name: "Vendetta", notes: "", photos: [] }
   - { name: "Copernicus", notes: "", photos: [] }
   - { name: "O4", notes: "", photos: [] }
@@ -184,7 +184,7 @@ unresolved:
     notes: "Unknown."
   - item: "Icarus × Rocket mystery babies"
     notes: "Two small babies in one bin; identity/date still need reconciling."
-  - item: "Name needed: male Singularity"
+  - item: "Orbit named (formerly Male Singularity)"
     notes: ""
   - item: "Name needed: Sable male"
     notes: ""
