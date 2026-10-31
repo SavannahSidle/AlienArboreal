@@ -7,7 +7,7 @@ permalink: /family-tree/
 ---
 <a class="btn" href="{{ '/lineage/' | relative_url }}">← Back to Lineage</a>
 
-<p>Follow parentage through generations. Every relationship is generated from the animal profiles’ <code>parents</code> field.</p>
+<p>Follow parentage through generations. Relationships use the selected sire and dam records, with legacy parentage text supported for older profiles.</p>
 <style>
 .genealogy{display:grid;gap:2rem;margin-top:1.5rem}
 .family-branch{min-width:0}
@@ -36,7 +36,7 @@ permalink: /family-tree/
 {% for gecko in geckos %}
   {% assign tree_photo = gecko.image %}
   {% if tree_photo == nil and gecko.photos and gecko.photos.size > 0 %}{% assign tree_photo = gecko.photos[0] %}{% endif %}
-  {"name":{{ gecko.name | jsonify }},"url":{{ gecko.url | relative_url | jsonify }},"parents":{{ gecko.parents | default: "" | jsonify }},"sex":{{ gecko.sex | default: "" | jsonify }},"status":{{ gecko.status | default: "" | jsonify }},"hatch_date":{{ gecko.hatch_date | default: "" | jsonify }},"morph":{{ gecko.morph | default: "" | jsonify }},"photo":{% if tree_photo %}{{ tree_photo | relative_url | jsonify }}{% else %}null{% endif %}}{% unless forloop.last %},{% endunless %}
+  {"name":{{ gecko.name | jsonify }},"url":{{ gecko.url | relative_url | jsonify }},"parents":{{ gecko.parents | default: "" | jsonify }},"sire":{{ gecko.sire | default: "" | jsonify }},"dam":{{ gecko.dam | default: "" | jsonify }},"sex":{{ gecko.sex | default: "" | jsonify }},"status":{{ gecko.status | default: "" | jsonify }},"hatch_date":{{ gecko.hatch_date | default: "" | jsonify }},"morph":{{ gecko.morph | default: "" | jsonify }},"photo":{% if tree_photo %}{{ tree_photo | relative_url | jsonify }}{% else %}null{% endif %}}{% unless forloop.last %},{% endunless %}
 {% endfor %}
 ]</script>
 <div id="genealogy-tree" class="genealogy" aria-live="polite"></div>
@@ -50,7 +50,7 @@ permalink: /family-tree/
   const normalize=s=>(s||'').trim().replace(/\s+/g,' ').toLocaleLowerCase();
   const byName=new Map(animals.map(a=>[normalize(a.name),a]));
   const groups=new Map();
-  animals.filter(a=>a.parents).forEach(child=>{
+  animals.filter(a=>a.sire||a.dam||a.parents).forEach(child=>{
     const names=child.parents.split(/\s*[×]\s*|\s+[xX]\s+|\s*,\s*/).map(s=>s.trim()).filter(Boolean);
     if(!names.length)return;
     const key=names.map(normalize).sort().join('||');
