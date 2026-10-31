@@ -7,4 +7,3 @@ photos:
   - /assets/images/geckos/img5920.jpeg
 animal_id: Charmander
 ---
-More notes and photos can be added through the site editor.
