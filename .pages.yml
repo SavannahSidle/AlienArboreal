@@ -31,12 +31,12 @@ content:
       primary: name
     fields:
       - name: animal_id
-        label: Animal ID
+        label: Animal ID (Code)
         type: string
         required: true
-        description: "Create the ID first. This becomes the record filename."
+        description: "Permanent record code. Set when creating a gecko; keep it unchanged when updating the name or other details."
       - name: name
-        label: Proper name
+        label: Name
         type: string
         required: true
       - name: identifier
