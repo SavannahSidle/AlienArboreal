@@ -5,6 +5,7 @@ on:
     paths:
       - '_geckos/**'
       - 'scripts/link_inline_parents.py'
+      - 'scripts/normalize_gecko_dates.py'
   workflow_dispatch:
 permissions:
   contents: write
@@ -19,6 +20,7 @@ jobs:
         with:
           python-version: '3.12'
       - run: pip install PyYAML==6.0.2
+      - run: python scripts/normalize_gecko_dates.py
       - run: python scripts/link_inline_parents.py
       - name: Commit generated parent profiles and links
         run: |
