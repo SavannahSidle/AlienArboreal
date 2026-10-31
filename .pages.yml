@@ -91,9 +91,28 @@ content:
       - name: summary
         label: Short description
         type: text
+      - name: sire
+        label: Sire (father)
+        type: reference
+        options:
+          collection: geckos
+          search: "name,animal_id"
+          value: "{name}"
+          label: "{name}"
+        description: "Select an existing gecko record. Create missing parents under Geckos first."
+      - name: dam
+        label: Dam (mother)
+        type: reference
+        options:
+          collection: geckos
+          search: "name,animal_id"
+          value: "{name}"
+          label: "{name}"
+        description: "Select an existing gecko record. Offspring are linked automatically in the family tree."
       - name: parents
-        label: Parentage / lineage
+        label: Legacy parentage / external lineage
         type: string
+        description: "Keep existing parentage text for historical or external parents. Structured sire/dam selections take priority in the family tree."
       - name: source
         label: Source
         type: string
