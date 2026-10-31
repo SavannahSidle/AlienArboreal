@@ -9,5 +9,6 @@ source: Exquisite Geckos
 summary: Historical profile and lineage record for Detox.
 photos:
   - /assets/images/lineage/detox.jpg
+animal_id: Detox
 ---
 Detox remains part of the lineage record after placement.
