@@ -1,0 +1,31 @@
+name: Create inline lineage parents
+on:
+  push:
+    branches: [main]
+    paths:
+      - '_geckos/**'
+      - 'scripts/link_inline_parents.py'
+  workflow_dispatch:
+permissions:
+  contents: write
+jobs:
+  link-parents:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v4
+        with:
+          persist-credentials: true
+      - uses: actions/setup-python@v5
+        with:
+          python-version: '3.12'
+      - run: pip install PyYAML==6.0.2
+      - run: python scripts/link_inline_parents.py
+      - name: Commit generated parent profiles and links
+        run: |
+          if ! git diff --quiet || [ -n "$(git ls-files --others --exclude-standard _geckos)" ]; then
+            git config user.name "github-actions[bot]"
+            git config user.email "41898282+github-actions[bot]@users.noreply.github.com"
+            git add _geckos
+            git commit -m "Link newly created sire and dam lineage records"
+            git push
+          fi
