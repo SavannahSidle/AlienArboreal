@@ -6,4 +6,4 @@ summary: Individual profile and lineage record for Tofu.
 photos:
   - /assets/images/lineage/tofu.jpg
 ---
-Tofu has one known offspring with Shinx. More notes and photos can be added through the site editor.
+Tofu has one known offspring with Shinx. 
