@@ -53,56 +53,60 @@ layout: default
 <section class="profile-family">
 <h2>Family tree</h2>
 
-{% if page.parents %}
-<h3>Lineage Parents</h3>
-{% assign parent_raw = page.parents | replace: ' X ', '×' | replace: ' x ', '×' | replace: ',', '×' %}
-{% assign parent_parts = parent_raw | split: '×' %}
-<div class="profile-tree-row">
-{% for parent_name in parent_parts %}
-  {% assign clean_parent = parent_name | strip | replace: '  ', ' ' | replace: '  ', ' ' %}
-  {% assign parent_norm = clean_parent | downcase %}
-  {% assign matched_parent = nil %}
-  {% for candidate in geckos %}
-    {% assign candidate_norm = candidate.name | strip | replace: '  ', ' ' | replace: '  ', ' ' | downcase %}
-    {% if candidate_norm == parent_norm %}{% assign matched_parent = candidate %}{% break %}{% endif %}
-  {% endfor %}
-  <div class="profile-tree-node{% unless matched_parent %} missing{% endunless %}">{% if matched_parent %}<a href="{{ matched_parent.url | relative_url }}">{{ matched_parent.name }}</a>{% else %}{{ clean_parent }}{% endif %}</div>
-  {% unless forloop.last %}<div class="profile-tree-cross">×</div>{% endunless %}
+{% assign father_name = page.sire | default: '' %}
+{% assign mother_name = page.dam | default: '' %}
+{% assign legacy_parts = page.parents | replace: ' X ', '×' | replace: ' x ', '×' | replace: ',', '×' | split: '×' %}
+{% if father_name == '' and legacy_parts.size > 0 %}{% assign father_name = legacy_parts[0] | strip %}{% endif %}
+{% if mother_name == '' and legacy_parts.size > 1 %}{% assign mother_name = legacy_parts[1] | strip %}{% endif %}
+{% assign father = nil %}{% assign mother = nil %}
+{% for candidate in geckos %}
+  {% assign candidate_norm = candidate.name | strip | downcase %}
+  {% assign candidate_id = candidate.animal_id | default: '' | strip | downcase %}
+  {% assign father_norm = father_name | strip | downcase %}
+  {% assign mother_norm = mother_name | strip | downcase %}
+  {% if father_norm != '' %}{% if candidate_norm == father_norm or candidate_id == father_norm %}{% assign father = candidate %}{% endif %}{% endif %}
+  {% if mother_norm != '' %}{% if candidate_norm == mother_norm or candidate_id == mother_norm %}{% assign mother = candidate %}{% endif %}{% endif %}
 {% endfor %}
+{% if father_name != '' or mother_name != '' %}
+<h3>Parents</h3>
+<div class="profile-tree-row">
+{% if father_name != '' %}
+<div class="profile-tree-node"><small>Father</small>
+{% assign father_photo = page.sire_photo %}
+{% if father_photo == nil and father and father.photos and father.photos.size > 0 %}{% assign father_photo = father.photos[0] %}{% endif %}
+{% if father_photo %}<img src="{{ father_photo | relative_url }}" alt="Father {{ father_name | escape }}" style="width:100%;height:95px;object-fit:contain;margin:.4rem 0">{% endif %}
+{% if father %}<a href="{{ father.url | relative_url }}">{{ father.name }}</a>{% else %}{{ father_name }}{% endif %}
+</div>
+{% endif %}
+{% if father_name != '' and mother_name != '' %}<span class="profile-tree-cross">×</span>{% endif %}
+{% if mother_name != '' %}
+<div class="profile-tree-node"><small>Mother</small>
+{% assign mother_photo = page.dam_photo %}
+{% if mother_photo == nil and mother and mother.photos and mother.photos.size > 0 %}{% assign mother_photo = mother.photos[0] %}{% endif %}
+{% if mother_photo %}<img src="{{ mother_photo | relative_url }}" alt="Mother {{ mother_name | escape }}" style="width:100%;height:95px;object-fit:contain;margin:.4rem 0">{% endif %}
+{% if mother %}<a href="{{ mother.url | relative_url }}">{{ mother.name }}</a>{% else %}{{ mother_name }}{% endif %}
+</div>
+{% endif %}
 </div>
 <div class="profile-tree-stem"></div>
 <div class="profile-tree-row"><div class="profile-tree-node current">{{ page.name }}</div></div>
 {% endif %}
-
 {% assign has_offspring = false %}
+{% capture offspring_markup %}
 {% for child in geckos %}
-  {% if child.parents %}
-    {% assign child_raw = child.parents | replace: ' X ', '×' | replace: ' x ', '×' | replace: ',', '×' %}
-    {% assign child_parts = child_raw | split: '×' %}
-    {% for parent_name in child_parts %}
-      {% assign parent_norm = parent_name | strip | replace: '  ', ' ' | replace: '  ', ' ' | downcase %}
-      {% if parent_norm == page_norm %}{% assign has_offspring = true %}{% endif %}
-    {% endfor %}
+  {% assign is_child = false %}
+  {% assign sire_norm = child.sire | default: '' | strip | downcase %}
+  {% assign dam_norm = child.dam | default: '' | strip | downcase %}
+  {% assign page_id_norm = page.animal_id | default: '' | strip | downcase %}
+  {% if sire_norm == page_norm or dam_norm == page_norm or sire_norm != '' and sire_norm == page_id_norm or dam_norm != '' and dam_norm == page_id_norm %}{% assign is_child = true %}{% endif %}
+  {% if child.sire == nil and child.dam == nil and child.parents %}
+    {% assign parts = child.parents | replace: ' X ', '×' | replace: ' x ', '×' | replace: ',', '×' | split: '×' %}
+    {% for part in parts %}{% assign part_norm = part | strip | downcase %}{% if part_norm == page_norm %}{% assign is_child = true %}{% endif %}{% endfor %}
   {% endif %}
+  {% if is_child %}{% assign has_offspring = true %}<div class="profile-tree-node"><a href="{{ child.url | relative_url }}">{{ child.name }}</a>{% if child.hatch_date %}<small>{{ child.hatch_date }}</small>{% endif %}</div>{% endif %}
 {% endfor %}
-
-{% if has_offspring %}
-<h3>Offspring</h3>
-<div class="profile-children">
-{% for child in geckos %}
-  {% if child.parents %}
-    {% assign child_raw = child.parents | replace: ' X ', '×' | replace: ' x ', '×' | replace: ',', '×' %}
-    {% assign child_parts = child_raw | split: '×' %}
-    {% assign is_child = false %}
-    {% for parent_name in child_parts %}
-      {% assign parent_norm = parent_name | strip | replace: '  ', ' ' | replace: '  ', ' ' | downcase %}
-      {% if parent_norm == page_norm %}{% assign is_child = true %}{% endif %}
-    {% endfor %}
-    {% if is_child %}<div class="profile-tree-node"><a href="{{ child.url | relative_url }}">{{ child.name }}</a>{% if child.hatch_date %}<small>{{ child.hatch_date }}</small>{% endif %}</div>{% endif %}
-  {% endif %}
-{% endfor %}
-</div>
-{% endif %}
+{% endcapture %}
+{% if has_offspring %}<h3>Offspring</h3><div class="profile-children">{{ offspring_markup }}</div>{% endif %}
 </section>
 
 </div></div></article>
