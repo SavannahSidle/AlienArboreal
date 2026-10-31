@@ -9,4 +9,4 @@ parents: Killer × Strawberry
 source: Exquisite Geckos
 summary: Calm and friendly.
 ---
-Shinx is currently available for placement. Photos and additional notes can be managed through the site editor.
+Shinx is currently available for placement. 
