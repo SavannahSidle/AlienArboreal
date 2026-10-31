@@ -61,6 +61,24 @@ content:
               label: Placed
             - name: lineage
               label: Lineage record
+      - name: life_stage
+        label: Life stage
+        type: select
+        options:
+          values:
+            - name: hatchling
+              label: Hatchling
+            - name: juvenile
+              label: Juvenile
+            - name: subadult
+              label: Subadult
+            - name: adult
+              label: Adult
+        description: "Life stage is independent of placement status and breeding plans."
+      - name: future_breeder
+        label: Future breeder (breeding plans)
+        type: boolean
+        description: "Check only when this individual is intended for future breeding. This also lists the gecko in Breeding Plans."
       - name: sex
         label: Sex
         type: string
