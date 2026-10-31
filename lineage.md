@@ -24,7 +24,7 @@ permalink: /lineage/
 .tree-parents,.tree-children{display:flex;justify-content:center;align-items:center;flex-wrap:wrap;gap:.45rem;min-width:320px}
 .tree-node{min-width:110px;max-width:190px;padding:.5rem .7rem;text-align:center;border:1px solid var(--line);border-radius:5px;background:rgba(0,0,0,.12);font-size:.82rem;font-weight:700}
 .tree-node.missing{color:var(--muted)}
-.tree-node small{display:block;margin-top:.15rem;color:var(--muted);font:400 .63rem "Space Mono",monospace}.tree-photo{height:66px;margin:-.1rem -.15rem .4rem;display:grid;place-items:center;overflow:hidden;border:1px dashed var(--line);border-radius:3px;background:rgba(255,255,255,.025);color:var(--muted);font:400 .58rem "Space Mono",monospace;text-transform:uppercase}.tree-photo img{width:100%;height:100%;object-fit:cover}
+.tree-node small{display:block;margin-top:.15rem;color:var(--muted);font:400 .63rem "Space Mono",monospace}.tree-photo{height:66px;margin:-.1rem -.15rem .4rem;display:grid;place-items:center;overflow:hidden;border:1px dashed var(--line);border-radius:3px;background:rgba(255,255,255,.025);color:var(--muted);font:400 .58rem "Space Mono",monospace;text-transform:uppercase}.tree-photo img{width:100%;height:100%;object-fit:contain}
 .tree-cross{color:var(--acid);font:700 1rem "Space Mono",monospace}
 .tree-stem{width:1px;height:18px;background:var(--moss);margin:0 auto}
 .tree-branch{height:1px;background:var(--moss);margin:0 auto 12px;max-width:72%;min-width:80px}
