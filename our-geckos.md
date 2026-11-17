@@ -77,7 +77,7 @@ permalink: /our-geckos/
 {% endunless %}
 {% endfor %}
 </div>
-
+{% endif %}
 
 ## Placed
 
